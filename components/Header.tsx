@@ -125,7 +125,7 @@ const Header = () => {
 
 						<SheetFooter className=''>
 							<SheetClose asChild>
-								<div className='space-x-5'>
+								<div className='flex items-center justify-center space-x-5'>
 									<Button
 										variant='outline'
 										className='border-none px-5 font-semibold'
@@ -141,9 +141,9 @@ const Header = () => {
 								</div>
 							</SheetClose>
 							<Image
-								src='/assets/images/gif.gif'
+								src='/assets/svg/gif.svg'
 								alt='Rocket People'
-								className='mt-3'
+								className='my-3'
 								width={500}
 								height={500}
 							/>
