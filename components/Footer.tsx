@@ -135,7 +135,7 @@ const Footer = () => {
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 									placeholder='Your Email'
-									className='border-none outline-none placeholder:text-gray-400 p-2 h-full  bg-transparent'
+									className='border-none outline-none placeholder:text-gray-400 p-2 h-full bg-transparent'
 								/>
 								<Button
 									className='text-white bg-secondary-color rounded-none border-none hover:bg-teal-700'
