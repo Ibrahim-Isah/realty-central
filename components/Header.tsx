@@ -123,7 +123,7 @@ const Header = () => {
 							})}
 						</div>
 
-						<SheetFooter className=''>
+						<div>
 							<SheetClose asChild>
 								<div className='flex items-center justify-center space-x-5'>
 									<Button
@@ -140,14 +140,16 @@ const Header = () => {
 									</Button>
 								</div>
 							</SheetClose>
-							<Image
-								src='/assets/svg/gif.svg'
-								alt='Rocket People'
-								className='my-3'
-								width={500}
-								height={500}
-							/>
-						</SheetFooter>
+							<SheetFooter>
+								<Image
+									src='/assets/svg/gif.svg'
+									alt='Rocket People'
+									className='my-3'
+									width={500}
+									height={500}
+								/>
+							</SheetFooter>
+						</div>
 					</SheetContent>
 				</Sheet>
 			</div>

@@ -130,7 +130,7 @@ const Footer = () => {
 								Subscribe to our newsletters to receive the latest news about
 								our company
 							</p>
-							<div className='flex border-2 border-gray-100 items-center max-w-fit mt-2'>
+							<div className='flex border-2 relative border-gray-100 items-center w-[80%] md:w-full mt-2'>
 								<input
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
@@ -138,7 +138,7 @@ const Footer = () => {
 									className='border-none outline-none placeholder:text-gray-400 p-2 h-full bg-transparent'
 								/>
 								<Button
-									className='text-white bg-secondary-color rounded-none border-none hover:bg-teal-700'
+									className='text-white bg-secondary-color absolute right-0 rounded-none border-none hover:bg-teal-700'
 									onClick={subscribe}
 								>
 									Subscribe
@@ -153,7 +153,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<Separator className='my-5' />
-				<div className='flex flex-wrap flex-col sm:flex-row space-y-3 items-start sm:items-center justify-evenly text-md font-light text-gray-400 '>
+				<div className='flex flex-wrap flex-col sm:flex-row space-y-3 md:space-y-0 items-start sm:items-center justify-evenly text-md font-light text-gray-400 '>
 					<p>
 						Copyright &copy; Realty Central {new Date().getFullYear()} , All
 						rights reserved.

@@ -34,6 +34,7 @@ const Jumbotron: React.FC<JumbotronProps> = ({ jumbotron, className }) => {
 					alt={`${title} image`}
 					width={500}
 					height={500}
+					className='px-2'
 				/>
 			</div>
 		</div>

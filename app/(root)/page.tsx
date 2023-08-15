@@ -112,7 +112,7 @@ export default function Home() {
 			{/* Hero Page Section */}
 			<div className='bg-[#f5f5f5] min-h-[70vh]'>
 				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto p-4'>
-					<div className='flex flex-col items-start my-14 sm:my-24 md:my-32 space-y-5 max-w-sm lg:max-w-md'>
+					<div className='flex flex-col items-center md:items-start my-14 sm:my-24 md:my-32 space-y-5 max-w-sm lg:max-w-md'>
 						<div className='bg-[#52789544] py-1 px-5 rounded-xl'>
 							<p className='text-primary-color text-sm md:text-md'>
 								Streamline Your Real Estate Workflow
@@ -121,7 +121,7 @@ export default function Home() {
 						<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
 							Welcome to Realty Central
 						</h1>
-						<p className='text-sm md:text-md font-medium'>
+						<p className='text-sm text-center sm:text-left md:text-md font-medium'>
 							Discover how Realty Central platform simplifies property
 							management and enhances customer engagement.
 						</p>
@@ -154,17 +154,17 @@ export default function Home() {
 			{/* Why Choose Us Section */}
 			<div className='min-h-[70vh] bg-gradient-to-r from-dark-primary  to-[#003366c4]'>
 				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto px-4 py-10 '>
-					<div className='flex flex-col items-start  my-14 space-y-5 max-w-full sm:max-w-sm '>
+					<div className='flex flex-col items-center md:items-start  my-14 space-y-5 max-w-full sm:max-w-sm '>
 						<div className='bg-[#52789544] py-1 px-5 rounded-xl'>
 							<p className='text-secondary-color text-sm md:text-md uppercase'>
 								Why Choose Us
 							</p>
 						</div>
-						<h1 className='text-2xl md:text-3xl text-white font-bold'>
+						<h1 className='text-2xl text-center sm:text-left md:text-3xl text-white font-bold'>
 							Elevate Your Property Management{' '}
 							<span className='text-secondary-color'>Experience</span>
 						</h1>
-						<p className='text-sm md:text-md text-white font-medium'>
+						<p className='text-sm text-center sm:text-left md:text-md text-white font-medium'>
 							Discover how Realty Central platform simplifies property
 							management and enhances customer engagement.
 						</p>
@@ -206,7 +206,7 @@ export default function Home() {
 
 			{/* Our Features Section */}
 			<div className='bg-white min-h-[70vh]'>
-				<div className='text-center max-w-xl mx-auto py-10 space-y-3'>
+				<div className='text-center max-w-xl mx-auto py-10 px-4 md:px-0 space-y-3'>
 					<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
 						Our Platform Features
 					</h1>
@@ -273,8 +273,8 @@ export default function Home() {
 
 			{/* Customer Success Story */}
 			<div className=' bg-gradient-to-r from-[#5250d122] via-[#f5f5f5c3] to-[#ffffffc4] min-h-[70vh] pb-10'>
-				<div className='max-w-7xl flex flex-col mx-auto p-4'>
-					<div className='text-center max-w-lg mx-auto py-10 space-y-3'>
+				<div className='max-w-7xl flex flex-col mx-auto p-4 '>
+					<div className='text-center p-4 mx-auto py-10 space-y-3 max-w-sm md:max-w-lg'>
 						<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
 							Our Customer’s Success is Our Success
 						</h1>
