@@ -153,7 +153,7 @@ export default function Home() {
 
 			{/* Why Choose Us Section */}
 			<div className='min-h-[70vh] bg-gradient-to-r from-dark-primary  to-[#003366c4]'>
-				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto p-4'>
+				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto px-4 py-10 '>
 					<div className='flex flex-col items-start  my-14 space-y-5 max-w-full sm:max-w-sm '>
 						<div className='bg-[#52789544] py-1 px-5 rounded-xl'>
 							<p className='text-secondary-color text-sm md:text-md uppercase'>
@@ -217,17 +217,19 @@ export default function Home() {
 						success.
 					</p>
 				</div>
-				{homeJumbotron.map((jumbotron) => (
-					<Jumbotron
-						key={jumbotron.title}
-						jumbotron={jumbotron}
-						className={
-							jumbotron.flexDirection === 'row'
-								? 'flex-row'
-								: 'flex-row-reverse'
-						}
-					/>
-				))}
+				<div className='space-y-10 md:space-y-0'>
+					{homeJumbotron.map((jumbotron) => (
+						<Jumbotron
+							key={jumbotron.title}
+							jumbotron={jumbotron}
+							className={
+								jumbotron.flexDirection === 'row'
+									? 'flex-row'
+									: 'flex-row-reverse'
+							}
+						/>
+					))}
+				</div>
 			</div>
 
 			{/* Re Assurance Section / Join Us */}
@@ -282,6 +284,7 @@ export default function Home() {
 							innovative solutions every step of the way.
 						</p>
 					</div>
+
 					<div className='self-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 lg:gap-x-14 gap-y-5 ml-5'>
 						{reviews.map((review) => (
 							<Card

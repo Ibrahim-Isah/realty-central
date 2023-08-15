@@ -85,7 +85,7 @@ const Footer = () => {
 					width={180}
 					height={180}
 				/>
-				<div className='flex flex-wrap items-start justify-between mt-10 space-y-5 md:space-y-0'>
+				<div className='flex flex-wrap flex-col md:flex-row items-start justify-between mt-10 space-y-10 md:space-y-0'>
 					<div className='space-y-3 max-w-sm flex-1'>
 						<h1 className='font-semibold text-lg'>Get in Touch</h1>
 						<div className='space-y-2 text-[16px]'>
@@ -108,11 +108,14 @@ const Footer = () => {
 						<h1 className='font-semibold text-lg'>Quick Links</h1>
 						<div className='space-y-2 text-[16px]'>
 							{routes.map((route) => (
-								<div className='flex space-x-2 items-center' key={route.href}>
-									<IoChevronForwardOutline />
+								<div
+									className='flex space-x-2 items-center group '
+									key={route.href}
+								>
+									<IoChevronForwardOutline className='group-hover:text-secondary-color' />
 									<Link
 										href={route.href}
-										className='hover:text-secondary-color'
+										className='group-hover:text-secondary-color'
 									>
 										{route.label}
 									</Link>
@@ -150,7 +153,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<Separator className='my-5' />
-				<div className='flex items-center justify-evenly text-md font-light text-gray-400 '>
+				<div className='flex flex-wrap flex-col sm:flex-row space-y-3 items-start sm:items-center justify-evenly text-md font-light text-gray-400 '>
 					<p>
 						Copyright &copy; Realty Central {new Date().getFullYear()} , All
 						rights reserved.

@@ -16,12 +16,12 @@ const Jumbotron: React.FC<JumbotronProps> = ({ jumbotron, className }) => {
 	return (
 		<div
 			className={cn(
-				'flex items-center justify-between max-w-7xl mx-auto p-4',
+				'block space-y-5 md:space-y-0 md:flex items-center justify-between max-w-7xl mx-auto p-4',
 				className
 			)}
 		>
 			<div className='flex-1'>
-				<div className='max-w-md space-y-5'>
+				<div className='max-w-md space-y-3 md:space-y-5'>
 					<h1 className='font-semibold text-lg md:text-2xl text-primary-color'>
 						{title}
 					</h1>
