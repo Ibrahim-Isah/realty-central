@@ -51,14 +51,14 @@ const Header = () => {
 	return (
 		<div className=''>
 			<div className='flex items-center justify-between max-w-7xl mx-auto p-4'>
-				<div>
+				<Link href='/'>
 					<Image
 						src={'/assets/images/logo.png'}
 						alt='Realty Logo'
 						width={180}
 						height={180}
 					/>
-				</div>
+				</Link>
 				<div className='hidden lg:flex items-center space-x-6 '>
 					{routes.map((route) => {
 						return (
