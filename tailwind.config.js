@@ -38,6 +38,10 @@ module.exports = {
 			backgroundImage: {
 				estate: 'url(/assets/images/estate.jpg) ',
 			},
+			fontFamily: {
+				inter: ['var(--font-inter)'],
+				poppins: ['var(--font-poppins)'],
+			},
 		},
 	},
 	plugins: [require('tailwindcss-animate')],

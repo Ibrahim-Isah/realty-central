@@ -118,12 +118,12 @@ export default function Home() {
 								Streamline Your Real Estate Workflow
 							</p>
 						</div>
-						<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
+						<h1 className='font-inter text-2xl md:text-4xl text-primary-color font-bold'>
 							Welcome to Realty Central
 						</h1>
 						<p className='text-sm text-center sm:text-left md:text-md font-medium'>
-							Discover how Realty Central platform simplifies property
-							management and enhances customer engagement.
+							Learn how the Realty Central platform streamlines property
+							management and improves client interaction.
 						</p>
 						<div className='flex items-center space-x-5'>
 							<Button
@@ -160,7 +160,7 @@ export default function Home() {
 								Why Choose Us
 							</p>
 						</div>
-						<h1 className='text-2xl text-center sm:text-left md:text-3xl text-white font-bold'>
+						<h1 className='font-inter text-2xl text-center sm:text-left md:text-3xl text-white font-bold'>
 							Elevate Your Property Management{' '}
 							<span className='text-secondary-color'>Experience</span>
 						</h1>
@@ -195,7 +195,9 @@ export default function Home() {
 									</div>
 								</CardHeader>
 								<CardContent className='text-white space-y-4 text-lg'>
-									<h1 className='font-semibold max-w-[200px]'>{card.title}</h1>
+									<h1 className='font-inter font-semibold max-w-[200px]'>
+										{card.title}
+									</h1>
 									<p className='font-normal text-sm'>{card.content}</p>
 								</CardContent>
 							</Card>
@@ -207,14 +209,14 @@ export default function Home() {
 			{/* Our Features Section */}
 			<div className='bg-white min-h-[70vh]'>
 				<div className='text-center max-w-xl mx-auto py-10 px-4 md:px-0 space-y-3'>
-					<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
+					<h1 className='font-inter text-2xl md:text-4xl text-primary-color font-bold'>
 						Our Platform Features
 					</h1>
 					<p className='text-sm md:text-md font-medium'>
-						Elevate Your Real Estate Operations with Essential Tools: Document
-						Management, CRM Excellence, and Real-Time Insights. Discover how
-						these pivotal features streamline processes and ensure your industry
-						success.
+						Improve Your Real Estate Operations with These Essential Tools:
+						Document Management, Outstanding CRM, and Real-Time Insights. Learn
+						how these essential features can simplify procedures and guarantee
+						your business&apos; success.
 					</p>
 				</div>
 				<div className='space-y-10 md:space-y-0'>
@@ -249,7 +251,7 @@ export default function Home() {
 							<p className=' text-sm md:text-md uppercase'>
 								What are you waiting for
 							</p>
-							<h1 className='text-2xl md:text-4xl font-bold'>
+							<h1 className='font-inter text-2xl md:text-4xl font-bold'>
 								Experience an enriched real estate journey with us.
 							</h1>
 						</div>
@@ -275,7 +277,7 @@ export default function Home() {
 			<div className=' bg-gradient-to-r from-[#5250d122] via-[#f5f5f5c3] to-[#ffffffc4] min-h-[70vh] pb-10'>
 				<div className='max-w-7xl flex flex-col mx-auto p-4 '>
 					<div className='text-center p-4 mx-auto py-10 space-y-3 max-w-sm md:max-w-lg'>
-						<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
+						<h1 className='font-inter text-2xl md:text-4xl text-primary-color font-bold'>
 							Our Customer’s Success is Our Success
 						</h1>
 						<p className='text-sm md:text-md font-medium'>

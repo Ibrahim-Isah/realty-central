@@ -51,14 +51,14 @@ const Header = () => {
 	return (
 		<div className=''>
 			<div className='flex items-center justify-between max-w-7xl mx-auto p-4'>
-				<div>
+				<Link href='/'>
 					<Image
 						src={'/assets/images/logo.png'}
 						alt='Realty Logo'
 						width={180}
 						height={180}
 					/>
-				</div>
+				</Link>
 				<div className='hidden lg:flex items-center space-x-6 '>
 					{routes.map((route) => {
 						return (
@@ -89,6 +89,7 @@ const Header = () => {
 				<Sheet>
 					<SheetTrigger asChild>
 						<Button
+							aria-label='Menu Icon'
 							variant='outline'
 							className='flex lg:hidden hover:bg-[#00336611] p-[9px] rounded-full border-none'
 						>
@@ -109,16 +110,17 @@ const Header = () => {
 						<div className='flex flex-col flex-1 mb-auto items-start space-y-5 mt-10'>
 							{routes.map((route) => {
 								return (
-									<Link
-										key={route.href}
-										href={route.href}
-										className={cn(
-											'hover:text-blue-500 text-[16px]',
-											route.active ? 'font-bold text-primary-color' : ''
-										)}
-									>
-										{route.label}
-									</Link>
+									<SheetClose asChild key={route.href}>
+										<Link
+											href={route.href}
+											className={cn(
+												'hover:text-blue-500 text-[16px]',
+												route.active ? 'font-bold text-primary-color' : ''
+											)}
+										>
+											{route.label}
+										</Link>
+									</SheetClose>
 								);
 							})}
 						</div>
