@@ -122,8 +122,8 @@ export default function Home() {
 							Welcome to Realty Central
 						</h1>
 						<p className='text-sm text-center sm:text-left md:text-md font-medium'>
-							Discover how Realty Central platform simplifies property
-							management and enhances customer engagement.
+							Learn how the Realty Central platform streamlines property
+							management and improves client interaction.
 						</p>
 						<div className='flex items-center space-x-5'>
 							<Button
@@ -213,10 +213,10 @@ export default function Home() {
 						Our Platform Features
 					</h1>
 					<p className='text-sm md:text-md font-medium'>
-						Elevate Your Real Estate Operations with Essential Tools: Document
-						Management, CRM Excellence, and Real-Time Insights. Discover how
-						these pivotal features streamline processes and ensure your industry
-						success.
+						Improve Your Real Estate Operations with These Essential Tools:
+						Document Management, Outstanding CRM, and Real-Time Insights. Learn
+						how these essential features can simplify procedures and guarantee
+						your business&apos; success.
 					</p>
 				</div>
 				<div className='space-y-10 md:space-y-0'>

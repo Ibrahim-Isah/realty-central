@@ -89,6 +89,7 @@ const Header = () => {
 				<Sheet>
 					<SheetTrigger asChild>
 						<Button
+							aria-label='Menu Icon'
 							variant='outline'
 							className='flex lg:hidden hover:bg-[#00336611] p-[9px] rounded-full border-none'
 						>
