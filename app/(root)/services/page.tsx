@@ -1,9 +1,11 @@
+import Jumbotron from '@/components/Jumbotron';
 import { Button } from '@/components/ui/button';
+import { servicesJumbotron } from '@/lib/constants';
 import Image from 'next/image';
 
 const Services = () => {
 	return (
-		<main className=''>
+		<main className='font-poppins'>
 			<div className='bg-[#f5f5f5] min-h-[70vh]'>
 				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto p-4'>
 					<div className='flex flex-col items-center md:items-start my-14 sm:my-24 md:my-32 space-y-5 max-w-sm lg:max-w-md'>
@@ -12,7 +14,7 @@ const Services = () => {
 								Our Services
 							</p>
 						</div>
-						<h1 className='text-2xl md:text-4xl text-center sm:text-left text-primary-color font-bold'>
+						<h1 className='text-2xl font-inter md:text-4xl text-center sm:text-left text-primary-color font-bold'>
 							Empowering Your Real Estate Triumph Through Expert Services.
 						</h1>
 						<p className='text-sm text-center sm:text-left md:text-md font-medium'>
@@ -55,9 +57,24 @@ const Services = () => {
 			/>
 			<div className='bg-white min-h-[70vh]'>
 				<div className='text-center max-w-xl mx-auto py-10 px-4 md:px-0 space-y-3'>
-					<h1 className='text-2xl md:text-4xl text-primary-color font-bold'>
+					<h1 className='text-2xl font-inter md:text-4xl text-primary-color font-bold'>
 						We Offer Best Service For Our Customers
 					</h1>
+				</div>
+				<div className='space-y-10 md:space-y-0'>
+					{servicesJumbotron.map((jumbotron) => (
+						<Jumbotron
+							key={jumbotron.title}
+							jumbotron={jumbotron}
+							className={
+								jumbotron.flexDirection === 'row'
+									? 'flex-row'
+									: 'flex-row-reverse'
+							}
+							width={jumbotron.width || undefined}
+							height={jumbotron.height || undefined}
+						/>
+					))}
 				</div>
 			</div>
 		</main>

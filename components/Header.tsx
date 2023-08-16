@@ -109,16 +109,17 @@ const Header = () => {
 						<div className='flex flex-col flex-1 mb-auto items-start space-y-5 mt-10'>
 							{routes.map((route) => {
 								return (
-									<Link
-										key={route.href}
-										href={route.href}
-										className={cn(
-											'hover:text-blue-500 text-[16px]',
-											route.active ? 'font-bold text-primary-color' : ''
-										)}
-									>
-										{route.label}
-									</Link>
+									<SheetClose asChild key={route.href}>
+										<Link
+											href={route.href}
+											className={cn(
+												'hover:text-blue-500 text-[16px]',
+												route.active ? 'font-bold text-primary-color' : ''
+											)}
+										>
+											{route.label}
+										</Link>
+									</SheetClose>
 								);
 							})}
 						</div>

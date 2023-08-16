@@ -87,7 +87,7 @@ const Footer = () => {
 				/>
 				<div className='flex flex-wrap flex-col md:flex-row items-start justify-between mt-10 space-y-10 md:space-y-0'>
 					<div className='space-y-3 max-w-sm flex-1'>
-						<h1 className='font-semibold text-lg'>Get in Touch</h1>
+						<h1 className='font-inter font-semibold text-lg'>Get in Touch</h1>
 						<div className='space-y-2 text-[16px]'>
 							<IconText
 								icon={<LuMapPin size='1.2rem' />}
@@ -105,7 +105,7 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className='space-y-3 max-w-sm flex-1'>
-						<h1 className='font-semibold text-lg'>Quick Links</h1>
+						<h1 className='font-inter font-semibold text-lg'>Quick Links</h1>
 						<div className='space-y-2 text-[16px]'>
 							{routes.map((route) => (
 								<div
@@ -124,7 +124,7 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className='space-y-3 max-w-sm flex-1'>
-						<h1 className='font-semibold text-lg'>Newsletter</h1>
+						<h1 className='font-inter font-semibold text-lg'>Newsletter</h1>
 						<div className='text-[16px]'>
 							<p>
 								Subscribe to our newsletters to receive the latest news about
