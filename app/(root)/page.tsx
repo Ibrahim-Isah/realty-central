@@ -112,16 +112,16 @@ export default function Home() {
 			{/* Hero Page Section */}
 			<div className='bg-[#f5f5f5] min-h-[70vh]'>
 				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto p-4'>
-					<div className='flex flex-col items-center md:items-start my-14 sm:my-24 md:my-32 space-y-5 max-w-sm lg:max-w-md'>
+					<div className='flex flex-col items-center md:items-start my-14 sm:my-24 md:my-32 space-y-5 max-w-sm lg:max-w-lg'>
 						<div className='bg-[#52789544] py-1 px-5 rounded-xl'>
 							<p className='text-primary-color text-sm md:text-md'>
 								Streamline Your Real Estate Workflow
 							</p>
 						</div>
-						<h1 className='font-inter text-2xl md:text-4xl text-primary-color font-bold'>
+						<h1 className='font-inter text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold'>
 							Welcome to Realty Central
 						</h1>
-						<p className='text-sm text-center sm:text-left md:text-md font-medium'>
+						<p className='text-sm text-center sm:text-left md:text-md lg:text-lg font-medium'>
 							Learn how the Realty Central platform streamlines property
 							management and improves client interaction.
 						</p>
