@@ -34,13 +34,13 @@ const Faqs = () => {
 						{faqs.map((faq, index) => {
 							return (
 								<AccordionItem value={`item-${index + 1}`} key={index}>
-									<AccordionTrigger className='text-dark-primary'>
+									<AccordionTrigger className='text-primary-color'>
 										{faq.question}
 									</AccordionTrigger>
 									<AccordionContent>
 										{faq.answer.map((answer) => {
 											return (
-												<li key={answer} className='mt-2'>
+												<li key={answer} className='mt-2 text-dark-primary'>
 													{answer}
 												</li>
 											);
