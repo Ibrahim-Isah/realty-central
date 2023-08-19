@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
 import Image from 'next/image';
+import FadeIn, { FadeInStagger } from './fade-in';
 
 type JumbotronProps = {
 	className: string;
@@ -27,15 +28,15 @@ const Jumbotron: React.FC<JumbotronProps> = ({
 				className
 			)}
 		>
-			<div className='flex-1'>
+			<FadeIn className='flex-1'>
 				<div className='max-w-md space-y-3 md:space-y-5'>
 					<h1 className='font-inter font-semibold text-lg md:text-2xl text-primary-color'>
 						{title}
 					</h1>
 					<p className='font-medium text-sm'>{content}</p>
 				</div>
-			</div>
-			<div className='flex-1'>
+			</FadeIn>
+			<FadeIn className='flex-1'>
 				<Image
 					src={imageUrl || `/assets/images/docs-mgt.jpg`}
 					alt={`${title} image`}
@@ -43,7 +44,7 @@ const Jumbotron: React.FC<JumbotronProps> = ({
 					height={height || 450}
 					className='px-2'
 				/>
-			</div>
+			</FadeIn>
 		</div>
 	);
 };
