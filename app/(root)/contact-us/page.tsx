@@ -19,6 +19,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import FadeIn from '@/components/fade-in';
 
 const formSchema = z.object({
 	firstname: z
@@ -55,7 +56,7 @@ const ContactForm = () => {
 
 	return (
 		<div className='bg-[#f5f5f5] py-12 px-6 shadow-md rounded-2xl w-full'>
-			<div>
+			<FadeIn>
 				<h1 className='font-inter text-primary-color text-xl md:text-2xl font-semibold text-center'>
 					Send us a Message
 				</h1>
@@ -135,7 +136,7 @@ const ContactForm = () => {
 						</Button>
 					</form>
 				</Form>
-			</div>
+			</FadeIn>
 		</div>
 	);
 };
@@ -144,12 +145,12 @@ const Contact = () => {
 	return (
 		<div className='bg-white min-h-[70vh] mb-7  mt-14 sm:mt-24 md:mt-32'>
 			<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto space-x-5 p-4'>
-				<div className='flex flex-col items-center flex-1  md:items-start space-y-8 max-w-sm sm:max-w-md lg:max-w-md'>
+				<FadeIn className='flex flex-col items-center flex-1  md:items-start space-y-8 max-w-sm sm:max-w-md lg:max-w-md'>
 					<div className='space-y-3'>
 						<h1 className='font-inter text-center sm:text-left text-2xl md:text-3xl text-primary-color font-bold'>
 							Let&apos;s Get In Touch
 						</h1>
-						<p className='text-sm text-center sm:text-left md:text-md  font-medium'>
+						<p className='text-sm text-center sm:text-left    font-medium'>
 							Having any question about our Us, Fill out the form and our
 							experts will get back to you as soon as possible
 						</p>
@@ -188,7 +189,7 @@ const Contact = () => {
 							/>
 						</div>
 					</div>
-				</div>
+				</FadeIn>
 				<div className='hidden sm:flex flex-1 items-center justify-center mx-auto w-full md:w-2/4'>
 					<ContactForm />
 				</div>

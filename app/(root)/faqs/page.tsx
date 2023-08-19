@@ -15,12 +15,10 @@ const Faqs = () => {
 				<div className='max-w-7xl mx-auto p-4'>
 					<div className='flex flex-col items-center mb-5 mt-14 sm:mt-24 md:mt-32 space-y-5 '>
 						<div className='bg-[#52789544] py-1 px-5 rounded-xl'>
-							<p className='text-primary-color text-sm md:text-md'>Faqs</p>
+							<p className='pill'>Faqs</p>
 						</div>
-						<h1 className='font-inter text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold'>
-							Frequently Asked Questions
-						</h1>
-						<p className='text-sm text-center sm:text-left md:text-md lg:text-lg  font-medium'>
+						<h1 className='mainTitle'>Frequently Asked Questions</h1>
+						<p className='text-sm text-center sm:text-left   lg:text-lg  font-medium'>
 							Have questions? We are here to help
 						</p>
 						<div>

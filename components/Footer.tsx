@@ -153,7 +153,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<Separator className='my-5' />
-				<div className='flex flex-wrap flex-col sm:flex-row space-y-3 md:space-y-0 items-start sm:items-center justify-evenly text-md font-light text-gray-400 '>
+				<div className='flex flex-wrap flex-col sm:flex-row space-y-3 md:space-y-0 items-start sm:items-center justify-evenly   font-light text-gray-400 '>
 					<p>
 						Copyright &copy; Realty Central {new Date().getFullYear()} , All
 						rights reserved.
