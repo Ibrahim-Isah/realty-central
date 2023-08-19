@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 interface TeamCardProps {
 	imageUrl: string;
@@ -30,7 +31,6 @@ const TeamCard: React.FC<TeamCardProps> = ({ imageUrl, name, title }) => {
 const About = () => {
 	return (
 		<main className=''>
-			{/* Hero Page Section */}
 			<div className='bg-[#f5f5f5] min-h-[70vh]'>
 				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto p-4'>
 					<div className='flex flex-col items-center md:items-start my-14 sm:my-24 md:my-32 space-y-5 max-w-sm lg:max-w-xl'>
@@ -113,8 +113,84 @@ const About = () => {
 					</div>
 				</div>
 			</div>
+			<div className='py-14'>
+				<div className='max-w-7xl flex flex-col sm:flex-row justify-between mx-auto my-auto p-4 space-y-10 space-x-0 sm:space-x-5 sm:space-y-0'>
+					<div className='flex-1 self-center grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-14 lg:gap-20 ml-5'>
+						{aboutCards.map((card, index) => (
+							<Card className='backgroundCard' key={index}>
+								<CardHeader>{card.icon}</CardHeader>
+								<CardContent className=' space-y-4 text-lg'>
+									<h1 className='font-inter text-md md:text-xl font-semibold'>
+										{card.title}
+									</h1>
+									<p className='font-normal text-sm'>{card.content}</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</div>
 		</main>
 	);
 };
 
 export default About;
+
+const aboutCards = [
+	{
+		icon: (
+			<Image
+				src='/assets/svg/moneybag.svg'
+				alt='connection'
+				width={60}
+				height={60}
+				className=' text-3xl'
+			/>
+		),
+		title: 'Increase your income',
+		content:
+			"The truth of the matter is that REALTORS® and real estate agents exclusively earn income when they achieve successful sales. Acknowledging the challenges of this demanding industry, we're dedicated to positioning you for triumph. Armed with potent tools and solutions, we're committed to aiding you in drawing in clients and finalizing transactions, ultimately propelling your earnings to new heights.",
+	},
+	{
+		icon: (
+			<Image
+				src='/assets/svg/hand.svg'
+				alt='connection'
+				width={60}
+				height={60}
+				className=' text-3xl'
+			/>
+		),
+		title: 'Here to help you, not replace you',
+		content:
+			'Indeed, the RealtyCentral Real Smart Assistant serves as an assistant in its essence. It is essential to note that this tool does not intend to supplant the genuine human connections that are fostered with clients. Our platform will steadfastly refrain from being a direct means of interacting with the clients of REALTORS® and real estate agents.',
+	},
+	{
+		icon: (
+			<Image
+				src='/assets/svg/lightbulb.svg'
+				alt='connection'
+				width={60}
+				height={60}
+				className=' text-3xl'
+			/>
+		),
+		title: 'Let IT work its magic',
+		content:
+			"At RealtyCentral, we hold the belief that each and every REALTOR® should be able to harness the advantages offered by technology. While concepts like big data, cloud computing, MLS® data, the Internet, and automation might sound complex, they don't have to be inscrutable. We are committed to aiding you in comprehending how these technological facets can simplify your real estate operations. Our aim is to demonstrate that integrating technology into your business.",
+	},
+	{
+		icon: (
+			<Image
+				src='/assets/svg/time.svg'
+				alt='connection'
+				width={60}
+				height={60}
+				className=' text-3xl'
+			/>
+		),
+		title: 'Save time and energy',
+		content:
+			'We understand that not everyone possesses a high level of technical expertise or the time to invest in intricate technical tasks. With My GoodReal, our objective is to simplify the process, enabling agents to swiftly establish or enhance their websites. This user-friendly approach is designed to alleviate the challenges of managing daily workloads, granting agents a sense of comfort and confidence.',
+	},
+];

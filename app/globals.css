@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 
+.backgroundCard {
+    @apply px-3 py-5 border-2 border-primary-color bg-primary-color rounded-2xl relative z-10 after:absolute after:-z-[1] after:rounded-2xl after:bottom-2 after:right-2 after:h-full after:w-full after:bg-white after:border-2 after:border-primary-color;
+}

@@ -35,7 +35,7 @@ export default function RootLayout({
 				className={`${poppins.variable} ${inter.variable} flex flex-col min-h-screen`}
 			>
 				<Header />
-				<main className='flex-1 font-poppins'>{children}</main>
+				<main className='flex-1 font-poppins mt-10 md:mt-auto'>{children}</main>
 				<Footer />
 			</body>
 		</html>

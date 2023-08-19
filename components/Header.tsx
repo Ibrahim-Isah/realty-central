@@ -49,7 +49,7 @@ const Header = () => {
 		},
 	];
 	return (
-		<div className=''>
+		<div className='fixed mb-16 md:mb-10 w-full shadow-sm bg-white z-50'>
 			<div className='flex items-center justify-between max-w-7xl mx-auto p-4'>
 				<Link href='/'>
 					<Image
@@ -76,7 +76,10 @@ const Header = () => {
 					})}
 				</div>
 				<div className='hidden lg:flex items-center space-x-5'>
-					<Button variant='outline' className='border-none px-5 font-semibold'>
+					<Button
+						variant='outline'
+						className='border-none shadow-md shadow-gray-300 px-5 font-semibold'
+					>
 						Log in
 					</Button>
 					<Button

@@ -10,7 +10,7 @@ import { IoChevronForwardOutline } from 'react-icons/io5';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
-const IconText = ({
+export const IconText = ({
 	icon,
 	text,
 	link,
