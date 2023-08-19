@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
+import { faqs } from '@/lib/data';
 import React from 'react';
 
 const Faqs = () => {
@@ -29,35 +30,25 @@ const Faqs = () => {
 			</div>
 			<div className='max-w-7xl mx-auto p-4 my-7'>
 				<div className='mx-auto max-w-full sm:max-w-2xl'>
-					<Accordion
-						type='single'
-						// className='border-2 border-primary-color rounded-lg px-4'
-						collapsible
-					>
-						<AccordionItem value='item-1'>
-							<AccordionTrigger className='text-dark-primary'>
-								Is it accessible?
-							</AccordionTrigger>
-							<AccordionContent>
-								Yes. It adheres to the WAI-ARIA design pattern.
-							</AccordionContent>
-						</AccordionItem>
-						<AccordionItem value='item-2'>
-							<AccordionTrigger className='text-dark-primary'>
-								Is it accessible?
-							</AccordionTrigger>
-							<AccordionContent>
-								Yes. It adheres to the WAI-ARIA design pattern.
-							</AccordionContent>
-						</AccordionItem>
-						<AccordionItem value='item-3'>
-							<AccordionTrigger className='text-dark-primary'>
-								Is it accessible?
-							</AccordionTrigger>
-							<AccordionContent>
-								Yes. It adheres to the WAI-ARIA design pattern.
-							</AccordionContent>
-						</AccordionItem>
+					<Accordion type='single' collapsible>
+						{faqs.map((faq, index) => {
+							return (
+								<AccordionItem value={`item-${index + 1}`} key={index}>
+									<AccordionTrigger className='text-primary-color'>
+										{faq.question}
+									</AccordionTrigger>
+									<AccordionContent>
+										{faq.answer.map((answer) => {
+											return (
+												<li key={answer} className='mt-2 text-dark-primary'>
+													{answer}
+												</li>
+											);
+										})}
+									</AccordionContent>
+								</AccordionItem>
+							);
+						})}
 					</Accordion>
 				</div>
 			</div>
