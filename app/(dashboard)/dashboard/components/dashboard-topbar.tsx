@@ -28,19 +28,29 @@ const DashboardTopbar = () => {
 							<LuMenu size='1.5rem' />
 						</Button>
 					</SheetTrigger>
-					<SheetContent className='flex flex-col w-[300px]' side='left'>
-						<SheetHeader>
-							<SheetTitle className='mb-8'>
-								<Image
-									src={'/assets/images/logo.png'}
-									alt='Realty Logo'
-									width={180}
-									height={180}
-								/>
-							</SheetTitle>
-						</SheetHeader>
-
-						<DashboardContent />
+					<SheetContent
+						className='flex flex-col w-[300px] h-screen justify-between'
+						side='left'
+					>
+						<div>
+							<SheetHeader>
+								<SheetTitle className='mb-8'>
+									<Image
+										src={'/assets/images/logo.png'}
+										alt='Realty Logo'
+										width={180}
+										height={180}
+									/>
+								</SheetTitle>
+							</SheetHeader>
+							<DashboardContent />
+						</div>
+						<Button
+							variant='outline'
+							className='border border-primary-color mb-3'
+						>
+							Log out
+						</Button>
 					</SheetContent>
 				</Sheet>
 			</div>
