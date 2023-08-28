@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import FadeIn, { FadeInStagger } from '@/components/fade-in';
+import FadeIn, { FadeInStagger } from '@/components/shared/fade-in';
 
 interface TeamCardProps {
 	imageUrl: string;

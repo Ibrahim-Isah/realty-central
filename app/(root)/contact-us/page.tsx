@@ -1,6 +1,6 @@
 'use client';
 
-import { IconText } from '@/components/Footer';
+import { IconText } from '@/app/(root)/components/footer';
 import Image from 'next/image';
 import React from 'react';
 import { LuMapPin, LuMail, LuPhone } from 'react-icons/lu';
@@ -19,7 +19,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import FadeIn from '@/components/fade-in';
+import FadeIn from '@/components/shared/fade-in';
 
 const formSchema = z.object({
 	firstname: z

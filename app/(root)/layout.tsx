@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import Footer from '@/app/(root)/components/footer';
+import Header from '@/app/(root)/components/header';
 import '../globals.css';
 
 export default function HomeLayout({

@@ -3,7 +3,7 @@ import { SignIn } from '@clerk/nextjs';
 
 const Login = () => {
 	return (
-		<div>
+		<div className='mt-10 md:mt-auto'>
 			<SignIn />
 		</div>
 	);
