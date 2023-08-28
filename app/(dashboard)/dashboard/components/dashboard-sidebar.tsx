@@ -2,6 +2,7 @@ import React from 'react';
 
 import Image from 'next/image';
 import DashboardContent from './dashboard-content';
+import { Button } from '@/components/ui/button';
 
 const DashboardSidebar = () => {
 	return (
@@ -18,6 +19,9 @@ const DashboardSidebar = () => {
 					</div>
 					<DashboardContent />
 				</div>
+				<Button variant='outline' className='border border-primary-color mb-3'>
+					Log out
+				</Button>
 			</div>
 		</>
 	);
