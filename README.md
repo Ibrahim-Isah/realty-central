@@ -1,5 +1,9 @@
 # Realty Central
 
+![Realty Central Logo](public/assets/images/logo.png)
+
+![Realty Central Logo](public/assets/images/white-logo.png)
+
 ## Overview
 [Realty Central]('https://www.realtycentral.co/') is an all-in-one cloud-based platform designed to assist real estate agents and housing estates in managing their entire workflow efficiently. It leverages different features to automate repetitive tasks, enhance customer engagement, and provide valuable insights for decision-making.
 
