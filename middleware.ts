@@ -11,6 +11,7 @@ export default authMiddleware({
 		'/faqs',
 		'/contact-us',
 		'/about-us',
+		'/dashboard',
 	],
 });
 
