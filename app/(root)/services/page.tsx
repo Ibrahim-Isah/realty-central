@@ -1,5 +1,5 @@
-import Jumbotron from '@/components/Jumbotron';
-import FadeIn from '@/components/fade-in';
+import Jumbotron from '@/app/(root)/components/jumbotron';
+import FadeIn from '@/components/shared/fade-in';
 import { Button } from '@/components/ui/button';
 import { servicesJumbotron } from '@/lib/constants';
 import Image from 'next/image';

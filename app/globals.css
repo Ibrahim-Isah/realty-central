@@ -3,14 +3,55 @@
 @tailwind utilities;
 
 
-.backgroundCard {
-    @apply px-3 py-5 border-2 border-primary-color bg-primary-color rounded-2xl relative z-10 after:absolute after:-z-[1] after:rounded-2xl after:bottom-2 after:right-2 after:h-full after:w-full after:bg-white after:border-2 after:border-primary-color;
+
+
+@layer utilities {
+    .css-invert {
+        @apply invert-[50%] brightness-200;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+        border-radius: 2px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #003366;
+        border-radius: 50px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #000000;
+    }
 }
 
-.mainTitle {
-    @apply font-inter text-center sm:text-left text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold
-}
+@layer components {
+    .topbar {
+        @apply fixed lg:left-[300px] top-0 z-30 flex w-full items-center justify-between bg-slate-50 shadow-sm border-b border-b-black px-6 py-3;
+    }
+    
+    .leftsidebar {
+        @apply sticky w-[300px] left-0 top-0 z-20 h-screen flex-col justify-between overflow-auto shadow-md bg-white gap-4 py-3 px-6 hidden lg:flex
+    }
 
-.pill {
-    @apply text-primary-color text-sm 
+    .leftsidebar_link {
+        @apply relative flex justify-start gap-4 rounded-lg p-4;
+    }   
+
+        .backgroundCard {
+            @apply px-3 py-5 border-2 border-primary-color bg-primary-color rounded-2xl relative z-10 after:absolute after:-z-[1] after:rounded-2xl after:bottom-2 after:right-2 after:h-full after:w-full after:bg-white after:border-2 after:border-primary-color;
+        }
+    
+        .mainTitle {
+            @apply font-inter text-center sm:text-left text-2xl md:text-4xl lg:text-5xl text-primary-color font-bold
+        }
+    
+        .pill {
+            @apply text-primary-color text-sm
+        }
 }

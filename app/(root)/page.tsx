@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 
-import Jumbotron from '@/components/Jumbotron';
+import Jumbotron from '@/app/(root)/components/jumbotron';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { homeJumbotron } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import FadeIn, { FadeInStagger } from '@/components/fade-in';
+import FadeIn, { FadeInStagger } from '@/components/shared/fade-in';
 
 const cards = [
 	{

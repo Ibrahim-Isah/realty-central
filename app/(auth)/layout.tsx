@@ -1,25 +1,19 @@
 import '../globals.css';
-import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import AuthFooter from './components/auth-footer';
+import AuthHeader from './components/auth-header';
 
-const poppins = Poppins({
-	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-	subsets: ['latin'],
-});
-
-export const metadata: Metadata = {
-	title: 'Realty Central',
-	description: 'Realty Central is a real estate management software',
-};
-
-export default function RootLayout({
+export default function AuthLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
-			<body className={poppins.className}>{children}</body>
-		</html>
+		<div className='flex flex-col min-h-screen'>
+			<AuthHeader />
+			<main className='flex flex-col justify-center items-center flex-1 my-7'>
+				{children}
+			</main>
+			<AuthFooter />
+		</div>
 	);
 }
