@@ -32,11 +32,11 @@
 
 @layer components {
     .topbar {
-        @apply fixed lg:left-[300px] top-0 z-30 flex w-full items-center justify-between bg-slate-50 shadow-sm border-b border-b-black px-6 py-3;
+        @apply fixed lg:left-[300px] lg:w-[calc(100%-300px)] top-0 z-30 flex w-full items-center justify-between bg-slate-50 shadow-sm border-b border-b-black px-6 py-3;
     }
     
     .leftsidebar {
-        @apply sticky w-[300px] left-0 top-0 z-20 h-screen flex-col justify-between overflow-auto shadow-md bg-white gap-4 py-3 px-6 hidden lg:flex
+        @apply fixed w-[300px] left-0 top-0 z-20 h-screen flex-col justify-between overflow-auto shadow-md bg-white gap-4 py-3 px-6 hidden lg:flex
     }
 
     .leftsidebar_link {

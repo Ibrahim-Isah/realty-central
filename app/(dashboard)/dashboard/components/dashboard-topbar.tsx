@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { LuMenu } from 'react-icons/lu';
 import Image from 'next/image';
 import DashboardContent from './dashboard-content';
+import { UserButton } from '@clerk/nextjs';
 
 const DashboardTopbar = () => {
 	return (
@@ -47,14 +48,14 @@ const DashboardTopbar = () => {
 						</div>
 						<Button
 							variant='outline'
-							className='border border-primary-color mb-3'
+							className='border border-primary-color mb-16 md:mb-10'
 						>
 							Log out
 						</Button>
 					</SheetContent>
 				</Sheet>
 			</div>
-			DashboardTopbar
+			<div className='self-end justify-end'>No User</div>
 		</div>
 	);
 };
