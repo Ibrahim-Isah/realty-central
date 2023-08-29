@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const DashboardSidebar = () => {
 	return (
 		<>
-			<div className='leftsidebar custom-scrollbar'>
+			<div className='leftsidebar custom-scrollbar mb-16 md:mb-10'>
 				<div className='mt-5'>
 					<div className='mb-8'>
 						<Image
