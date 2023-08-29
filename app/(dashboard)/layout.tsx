@@ -12,7 +12,7 @@ export default function DashboardLayout({
 	return (
 		<>
 			<main className='flex flex-auto lg:pl-[300px] pt-16 max-w-full'>
-				<div className='flex flex-col flex-auto w-full min-h-full mx-2'>
+				<div className='flex flex-col flex-auto w-full min-h-full mx-3 lg:mx-5'>
 					{children}
 				</div>
 			</main>

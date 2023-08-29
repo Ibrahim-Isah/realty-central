@@ -25,7 +25,7 @@ const DashboardContent = () => {
 		{
 			href: 'dashboard',
 			text: 'Dashboard',
-			icon: <LuLayoutDashboard className='font-bold' />,
+			icon: <LuLayoutDashboard />,
 			children: [],
 		},
 		{
@@ -76,7 +76,7 @@ const DashboardContent = () => {
 		},
 	];
 	return (
-		<div className='pt-7'>
+		<div className='pt-5'>
 			{routes.map((route) => (
 				<div key={route.text} className='my-3'>
 					{route.href ? (
