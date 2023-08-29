@@ -49,7 +49,7 @@ const Header = () => {
 		},
 	];
 	return (
-		<div className='fixed mb-16 md:mb-10 w-full shadow-sm bg-white z-50'>
+		<div className='fixed top-0 mb-16 md:mb-10 w-full shadow-sm bg-white z-50'>
 			<div className='flex items-center justify-between max-w-7xl mx-auto p-4'>
 				<Link href='/'>
 					<Image
