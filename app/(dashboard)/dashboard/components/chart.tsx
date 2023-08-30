@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { formatter } from '@/lib/utils';
 import Link from 'next/link';
@@ -89,7 +91,7 @@ const Chart = () => {
 						</div>
 					</Link>
 				</div>
-				<div className='my-5 flex items-center justify-evenly'>
+				<div className='my-5 flex flex-col sm:flex-row space-y-3 sm:space-y-0 items-center justify-evenly'>
 					<div className='flex items-center'>
 						<div className='bg-green-500 px-2 py-1 text-white rounded mr-2'>
 							<AiOutlineRise />
@@ -119,8 +121,7 @@ const Chart = () => {
 				</div>
 			</CardHeader>
 			<CardContent className='p-0'>
-				<ResponsiveContainer width={'100%'} height={'80%'}>
-					{/* <ResponsiveContainer width={200} height={300}> */}
+				<ResponsiveContainer width={'100%'} aspect={2}>
 					<BarChart
 						width={500}
 						height={300}

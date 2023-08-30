@@ -44,7 +44,7 @@ const Appointments = () => {
 											</span>
 										</p>
 									</div>
-									<Link href='/'>
+									<Link href='/appointments'>
 										<TooltipIcon
 											icon={<LuChevronRight />}
 											tooltip='View Details'

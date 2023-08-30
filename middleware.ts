@@ -7,11 +7,12 @@ export default authMiddleware({
 	publicRoutes: [
 		'/',
 		'/api/:path*',
-		'/services',
-		'/faqs',
-		'/contact-us',
-		'/about-us',
-		'/dashboard',
+		// '/services',
+		// '/faqs',
+		// '/contact-us',
+		// '/about-us',
+		// '/dashboard',
+		// '/:path*',
 	],
 });
 
