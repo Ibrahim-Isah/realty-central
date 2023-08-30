@@ -10,7 +10,7 @@ import {
 	LuLayoutDashboard,
 	LuUsers,
 } from 'react-icons/lu';
-import BreadCrumb from './components/breadcrumb';
+import BreadCrumb from '../../../components/shared/breadcrumb';
 import Chart from './components/chart';
 import { formatter } from '@/lib/utils';
 import Appointments from './components/appointments';
