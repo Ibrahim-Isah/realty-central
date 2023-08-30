@@ -10,10 +10,11 @@ import {
 	SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { LuMenu } from 'react-icons/lu';
+import { LuMenu, LuSearch } from 'react-icons/lu';
 import Image from 'next/image';
 import DashboardContent from './dashboard-content';
 import { UserButton } from '@clerk/nextjs';
+import { Input } from '@/components/ui/input';
 
 const DashboardTopbar = () => {
 	return (
@@ -55,7 +56,25 @@ const DashboardTopbar = () => {
 					</SheetContent>
 				</Sheet>
 			</div>
-			<div className='self-end justify-end'>No User</div>
+			<div className='self-end justify-end'>
+				<div className='max-w-2xl w-full mx-auto'>
+					<label htmlFor='search' className='sr-only'>
+						Search
+					</label>
+					<div className='relative w-full md:w-96 text-gray-600'>
+						<input
+							type='search'
+							name='search'
+							id='search'
+							placeholder='Search'
+							className='bg-white h-10 px-5 pr-10 shadow-md rounded-full text-sm focus:outline-none w-full'
+						/>
+						<button type='submit' className='absolute right-0 top-0 mt-3 mr-4 '>
+							<LuSearch />
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

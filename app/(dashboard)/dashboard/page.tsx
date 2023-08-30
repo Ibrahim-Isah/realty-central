@@ -13,6 +13,7 @@ import {
 import BreadCrumb from './components/breadcrumb';
 import Chart from './components/chart';
 import { formatter } from '@/lib/utils';
+import Appointments from './components/appointments';
 
 const cards = [
 	{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },
@@ -53,12 +54,12 @@ export default function Dashboard() {
 					</Card>
 				))}
 			</div>
-			<div className='grid grid-cols-1 lg:grid-cols-5 gap-5 mt-5 md:mt-10'>
-				<div className='col-span-3'>
+			<div className='grid grid-cols-1 lg:grid-cols-5 space-y-5 md:space-y-0 md:gap-5 mt-5 md:mt-10 mb-5'>
+				<div className='col-span-3 h-full'>
 					<Chart />
 				</div>
-				<div className='col-span-2'>
-					<h1>Some other things here</h1>
+				<div className='col-span-2 h-full'>
+					<Appointments />
 				</div>
 			</div>
 		</main>
