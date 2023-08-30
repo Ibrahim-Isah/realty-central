@@ -118,8 +118,9 @@ const Chart = () => {
 					</div>
 				</div>
 			</CardHeader>
-			<CardContent>
-				<ResponsiveContainer width={600} height={400}>
+			<CardContent className='p-0'>
+				<ResponsiveContainer width={'100%'} height={'80%'}>
+					{/* <ResponsiveContainer width={200} height={300}> */}
 					<BarChart
 						width={500}
 						height={300}
