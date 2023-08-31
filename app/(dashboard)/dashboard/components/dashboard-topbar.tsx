@@ -1,26 +1,27 @@
-import React from 'react';
+'use client';
+import { Button } from '@/components/ui/button';
 import {
 	Sheet,
 	SheetClose,
 	SheetContent,
-	SheetDescription,
-	SheetFooter,
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
-import { LuMenu, LuSearch } from 'react-icons/lu';
 import Image from 'next/image';
+import { LuMenu, LuSearch } from 'react-icons/lu';
 import DashboardContent from './dashboard-content';
-import { UserButton } from '@clerk/nextjs';
-import { Input } from '@/components/ui/input';
+import { useState } from 'react';
 
 const DashboardTopbar = () => {
+	const [sidebarOpen, setSidebarOpen] = useState(false);
 	return (
 		<div className='topbar'>
 			<div className='block lg:hidden'>
-				<Sheet>
+				<Sheet
+					open={sidebarOpen}
+					onOpenChange={(open: any) => setSidebarOpen(open)}
+				>
 					<SheetTrigger asChild>
 						<Button
 							aria-label='Menu Icon'
@@ -45,7 +46,7 @@ const DashboardTopbar = () => {
 									/>
 								</SheetTitle>
 							</SheetHeader>
-							<DashboardContent />
+							<DashboardContent setSidebarOpen={setSidebarOpen} />
 						</div>
 						<Button
 							variant='outline'

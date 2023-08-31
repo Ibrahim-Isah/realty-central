@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
 							height={180}
 						/>
 					</div>
-					<DashboardContent />
+					<DashboardContent setSidebarOpen={() => null} />
 				</div>
 				<Button
 					variant='outline'

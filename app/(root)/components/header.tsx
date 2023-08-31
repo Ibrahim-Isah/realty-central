@@ -2,15 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { LuMenu } from 'react-icons/lu';
 import { usePathname } from 'next/navigation';
+import { LuMenu } from 'react-icons/lu';
 
 import { Button } from '@/components/ui/button';
 import {
 	Sheet,
 	SheetClose,
 	SheetContent,
-	SheetDescription,
 	SheetFooter,
 	SheetHeader,
 	SheetTitle,
