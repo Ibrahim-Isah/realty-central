@@ -139,10 +139,11 @@ export default function Home() {
 					</div>
 					<div className='flex items-center justify-center'>
 						<Image
-							src='/assets/images/rocket.png'
+							src='/assets/images/dashboard.png'
 							alt='Man on a rocket'
-							width={500}
-							height={500}
+							unoptimized
+							width={600}
+							height={600}
 						/>
 					</div>
 				</FadeIn>
