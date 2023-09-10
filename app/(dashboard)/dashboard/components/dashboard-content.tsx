@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { BsDot } from 'react-icons/bs';
 import {
 	LuBarChart,
 	LuChevronDown,
@@ -14,7 +15,6 @@ import {
 	LuUser,
 	LuUsers,
 } from 'react-icons/lu';
-import { BsDot } from 'react-icons/bs';
 
 import {
 	Collapsible,
@@ -22,7 +22,11 @@ import {
 	CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 
-const DashboardContent = () => {
+const DashboardContent = ({
+	setSidebarOpen,
+}: {
+	setSidebarOpen: (open: boolean) => void;
+}) => {
 	const pathname = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -87,7 +91,7 @@ const DashboardContent = () => {
 			{routes.map((route) => (
 				<div key={route.text} className='my-3'>
 					{route.href ? (
-						<Link href={`/${route.href}`}>
+						<Link href={`/${route.href}`} onClick={() => setSidebarOpen(false)}>
 							<div
 								className={`flex items-center text-lg  p-2 rounded-md  ${
 									currentPath === route.href
@@ -117,7 +121,10 @@ const DashboardContent = () => {
 							<CollapsibleContent>
 								{route.children.map((innerRoute) => (
 									<div key={innerRoute.text} className='ml-5 mt-2'>
-										<Link href={`/${innerRoute.href}`}>
+										<Link
+											href={`/${innerRoute.href}`}
+											onClick={() => setSidebarOpen(false)}
+										>
 											<div
 												className={`flex items-center text-base  p-2 rounded-md  ${
 													currentPath === innerRoute.href
