@@ -1,10 +1,14 @@
+'use client';
+
 import Jumbotron from '@/app/(root)/components/jumbotron';
 import FadeIn from '@/components/shared/fade-in';
 import { Button } from '@/components/ui/button';
 import { servicesJumbotron } from '@/lib/constants';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Services = () => {
+	const router = useRouter();
 	return (
 		<main className='font-poppins'>
 			<div className='bg-[#f5f5f5] min-h-[70vh]'>
@@ -23,12 +27,14 @@ const Services = () => {
 						<div className='flex items-center space-x-5'>
 							<Button
 								variant='outline'
+								onClick={() => router.push('/about-us')}
 								className='border-none px-5 font-semibold bg-transparent hover:bg-[#00336611]'
 							>
 								Learn More
 							</Button>
 							<Button
 								variant='default'
+								onClick={() => router.push('/sign-in')}
 								className='bg-primary-color px-5 hover:bg-blue-900'
 							>
 								Get Started

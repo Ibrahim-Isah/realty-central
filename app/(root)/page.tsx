@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 
@@ -9,6 +7,9 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { homeJumbotron } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import FadeIn, { FadeInStagger } from '@/components/shared/fade-in';
+import { currentUser } from '@clerk/nextjs';
+import { fetchUser } from '@/actions/fetch-user';
+import { redirect } from 'next/navigation';
 
 const cards = [
 	{
@@ -125,12 +126,14 @@ export default function Home() {
 						<div className='flex items-center space-x-5'>
 							<Button
 								variant='outline'
+								onClick={() => redirect('/about-us')}
 								className='border-none px-5 font-semibold bg-transparent hover:bg-[#00336611]'
 							>
 								Learn More
 							</Button>
 							<Button
 								variant='default'
+								onClick={() => redirect('/sign-in')}
 								className='bg-primary-color px-5 hover:bg-blue-900'
 							>
 								Get Started
@@ -170,6 +173,7 @@ export default function Home() {
 							<Button
 								variant='default'
 								className='bg-secondary-color px-7 hover:bg-teal-600'
+								onClick={() => redirect('/sign-in')}
 							>
 								Join Now
 							</Button>
@@ -266,6 +270,7 @@ export default function Home() {
 						<div className='flex items-center justify-center space-x-5 '>
 							<Button
 								variant='default'
+								onClick={() => redirect('/sign-in')}
 								className='bg-white px-7 hover:bg-[#f5f5f5] text-black'
 							>
 								Join Now

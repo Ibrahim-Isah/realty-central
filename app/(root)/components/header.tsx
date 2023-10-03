@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { LuMenu } from 'react-icons/lu';
 
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,7 @@ import { cn } from '@/lib/utils';
 
 const Header = () => {
 	const pathname = usePathname();
+	const router = useRouter();
 
 	const routes = [
 		{
@@ -77,6 +78,7 @@ const Header = () => {
 				<div className='hidden lg:flex items-center space-x-5'>
 					<Button
 						variant='outline'
+						onClick={() => router.push('/sign-in')}
 						className='border-none shadow-md shadow-gray-300 px-5 font-semibold'
 					>
 						Log in
@@ -84,6 +86,7 @@ const Header = () => {
 					<Button
 						variant='default'
 						className='bg-primary-color px-5 hover:bg-blue-900'
+						onClick={() => router.push('/sign-up')}
 					>
 						Sign Up
 					</Button>
@@ -133,11 +136,13 @@ const Header = () => {
 									<Button
 										variant='outline'
 										className='border-none px-5 font-semibold'
+										onClick={() => router.push('/sign-in')}
 									>
 										Log in
 									</Button>
 									<Button
 										variant='default'
+										onClick={() => router.push('/sign-up')}
 										className='bg-primary-color px-5 hover:bg-blue-900'
 									>
 										Sign Up
