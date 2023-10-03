@@ -6,7 +6,28 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  firstName    String
+  lastName     String
+  companyName  String
+  email        String   @unique
+  phone        String?
+  profileImage String
+  address      String
+  city         String?
+  state        String
+  country      String
+  zipCode      String?
+  website      String
+  about        String?
+  on_boarded   Boolean
+  userId       String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
