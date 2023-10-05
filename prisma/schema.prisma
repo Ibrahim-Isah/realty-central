@@ -13,9 +13,9 @@ datasource db {
 
 model User {
   id           String   @id @default(uuid())
-  firstName    String
+  firstName    String?
   lastName     String
-  companyName  String
+  companyName  String?
   email        String   @unique
   phone        String?
   profileImage String
@@ -27,7 +27,7 @@ model User {
   website      String
   about        String?
   on_boarded   Boolean
-  userId       String   @unique
+  userId       String?  @unique
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }

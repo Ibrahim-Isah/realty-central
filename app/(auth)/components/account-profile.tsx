@@ -13,14 +13,21 @@ import {
 	FormField,
 	FormItem,
 	FormLabel,
+	FormMessage,
 } from '@/components/ui/form';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+} from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Separator } from '@radix-ui/react-separator';
 import image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
 
 interface AccountProfileProps {
 	userData: UserData;
@@ -71,14 +78,14 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 		<div className='max-w-7xl flex flex-col justify-between w-full mx-auto p-4'>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)}>
-					<div className='grid grid-cols-1 gap-3 sm:grid-cols-12'>
-						<div className='col-span-4'>
+					<div className='grid grid-cols-1 sm:gap-3 sm:grid-cols-12 space-y-5 sm:space-y-0'>
+						<div className='col-span-1 sm:col-span-4'>
 							<FormField
 								control={form.control}
 								name='profileImage'
 								render={({ field }) => (
 									<FormItem className='flex items-center gap-4'>
-										<Card className='max-w-xs h-72 p-0 flex flex-col items-center'>
+										<Card className='w-full sm:max-w-xs h-72 p-0 flex flex-col items-center'>
 											<CardContent className='flex flex-col items-center w-full space-y-3'>
 												<FormLabel className='account-form_image-label'>
 													<Avatar className='h-32 w-auto my-5'>
@@ -114,7 +121,125 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 							/>
 						</div>
 						<div className='col-span-8'>
-							<p>{userData.userId}</p> <p>{btnTitle}</p>
+							<Card className='pb-4 mb-5'>
+								<CardHeader>
+									<p className='text-base font-semibold '>
+										Personal Information
+									</p>
+								</CardHeader>
+								<CardContent className='grid grid-cols-1 md:grid-cols-2 sm:gap-3'>
+									<FormField
+										control={form.control}
+										name='firstName'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>
+													First Name
+												</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='First Name'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='lastName'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>
+													Last Name
+												</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='Last Name'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='email'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>Email</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='example@gmail.com'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='companyName'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>
+													Company Name
+												</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='Your Company Name'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='phone'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>
+													Phone Number
+												</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='Your Phone Number'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='about'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>Bio</FormLabel>
+												<FormControl>
+													<Textarea
+														rows={4}
+														placeholder='About you or your company'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+								</CardContent>
+							</Card>
 						</div>
 					</div>
 				</form>

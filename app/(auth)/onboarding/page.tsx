@@ -32,7 +32,7 @@ const Onboarding = async () => {
 
 	return (
 		<div className='min-h-[70vh] w-full'>
-			<div className='max-w-7xl flex flex-row justify-between w-full mx-auto px-4 pt-10 sm:p-4'>
+			<div className='max-w-7xl flex flex-row justify-between w-full mx-auto px-4 pt-10 sm:px-4'>
 				<div className='w-full pb-7 pt-3 flex flex-col space-y-5'>
 					<div className='space-y-2'>
 						<h1 className='text-xl sm:text-3xl font-medium font-inter'>
@@ -43,7 +43,7 @@ const Onboarding = async () => {
 						</p>
 					</div>
 				</div>
-				<div>
+				<div className='mt-5 sm:mt-1'>
 					<UserButton />
 				</div>
 			</div>
