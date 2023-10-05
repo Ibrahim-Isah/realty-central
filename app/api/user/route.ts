@@ -21,7 +21,9 @@ export async function POST(req: Request) {
 			country,
 			website,
 			about,
+			on_boarded,
 		} = body;
+
 		if (!userId) {
 			return new NextResponse('Unauthorized', {
 				status: 401,
@@ -39,7 +41,7 @@ export async function POST(req: Request) {
 				firstName,
 				lastName,
 				email,
-				on_boarded: true,
+				on_boarded,
 				companyName,
 				profileImage,
 				address,

@@ -10,6 +10,7 @@ const Onboarding = async () => {
 	if (!user) return redirect('/sign-up');
 
 	const userInfo = await fetchUser();
+	console.log('wetin be this', userInfo);
 	if (userInfo && userInfo.on_boarded) redirect('/dashboard');
 
 	const userData = {
@@ -26,7 +27,7 @@ const Onboarding = async () => {
 		country: '',
 		website: '',
 		about: '',
-		on_boarded: false,
+		on_boarded: true,
 		userId: user.id,
 	};
 

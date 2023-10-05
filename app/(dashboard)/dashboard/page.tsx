@@ -1,19 +1,18 @@
 'use client';
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { formatter } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import {
 	LuBanknote,
 	LuClock,
-	LuCreditCard,
 	LuHome,
 	LuLayoutDashboard,
 	LuUsers,
 } from 'react-icons/lu';
 import BreadCrumb from '../../../components/shared/breadcrumb';
-import Chart from './components/chart';
-import { formatter } from '@/lib/utils';
 import Appointments from './components/appointments';
+import Chart from './components/chart';
 
 const cards = [
 	{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },

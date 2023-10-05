@@ -23,7 +23,7 @@ model User {
   city         String?
   state        String
   country      String
-  zipCode      String?
+  zipCode      String
   website      String
   about        String?
   on_boarded   Boolean
