@@ -1,25 +1,23 @@
 'use client';
 
 import { IconText } from '@/app/(root)/components/footer';
-import Image from 'next/image';
-import React from 'react';
-import { LuMapPin, LuMail, LuPhone } from 'react-icons/lu';
-import { useForm } from 'react-hook-form';
+import FadeIn from '@/components/shared/fade-in';
+import { Button } from '@/components/ui/button';
 import {
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import FadeIn from '@/components/shared/fade-in';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
+import { useForm } from 'react-hook-form';
+import { LuMail, LuMapPin, LuPhone } from 'react-icons/lu';
+import * as z from 'zod';
 
 const formSchema = z.object({
 	firstname: z
