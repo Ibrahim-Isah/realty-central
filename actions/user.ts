@@ -1,5 +1,5 @@
 import prismadb from '@/lib/prismadb';
-import { auth, currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs';
 
 export const fetchUser = async () => {
 	try {
@@ -9,17 +9,10 @@ export const fetchUser = async () => {
 		}
 		const user = await prismadb.user.findUnique({
 			where: {
-				email: loggedInUser.emailAddresses[0].emailAddress || '',
+				userId: loggedInUser.id || '',
 			},
 		});
 
-		const users = await prismadb.user.findMany({
-			where: {
-				on_boarded: true,
-			},
-		});
-
-		console.log('the users', users);
 		return user;
 	} catch (error) {
 		console.log('[USER_FETCH]', error);

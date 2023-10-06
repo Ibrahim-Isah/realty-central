@@ -3,14 +3,13 @@ import AccountProfile from '../components/account-profile';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
-import { fetchUser } from '@/actions/fetch-user';
+import { fetchUser } from '@/actions/user';
 
 const Onboarding = async () => {
 	const user = await currentUser();
 	if (!user) return redirect('/sign-up');
 
 	const userInfo = await fetchUser();
-	console.log('wetin be this', userInfo);
 	if (userInfo && userInfo.on_boarded) redirect('/dashboard');
 
 	const userData = {
