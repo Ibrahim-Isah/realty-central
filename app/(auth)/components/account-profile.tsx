@@ -1,12 +1,12 @@
 'use client';
-import ImageUpload from '@/components/shared/image-upload';
-import { UserData } from '@/types';
-import { UserButton } from '@clerk/nextjs';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import React, { ChangeEvent, useRef, useState } from 'react';
-import { userSchema } from '@/lib/validations/user';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+} from '@/components/ui/card';
 import {
 	Form,
 	FormControl,
@@ -15,19 +15,18 @@ import {
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form';
-import Image from 'next/image';
 import { Input } from '@/components/ui/input';
-import {
-	Card,
-	CardContent,
-	CardFooter,
-	CardHeader,
-} from '@/components/ui/card';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Separator } from '@radix-ui/react-separator';
-import image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import { userSchema } from '@/lib/validations/user';
+import { UserData } from '@/types';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Separator } from '@radix-ui/react-separator';
+import React, { ChangeEvent, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 interface AccountProfileProps {
 	userData: UserData;
@@ -38,7 +37,10 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 	userData,
 	btnTitle,
 }) => {
+	const router = useRouter();
+
 	const [files, setFiles] = useState<File[]>([]);
+	const [loading, setLoading] = useState(false);
 
 	const defaultValues = userData;
 
@@ -47,8 +49,18 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 		defaultValues,
 	});
 
-	const onSubmit = (values: z.infer<typeof userSchema>) => {
-		console.log(values);
+	const onSubmit = async (values: z.infer<typeof userSchema>) => {
+		setLoading(true);
+		try {
+			await axios.post('/api/user', values);
+			setLoading(false);
+			toast.success('Onboarding completed');
+			form.reset();
+			router.push('/dashboard');
+		} catch (err) {
+			setLoading(false);
+			toast.error('Something went wrong');
+		}
 	};
 
 	const handleImage = (
@@ -240,6 +252,122 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 									/>
 								</CardContent>
 							</Card>
+							<Card className='pb-4 mb-5'>
+								<CardHeader>
+									<p className='text-base font-semibold '>Other Information</p>
+								</CardHeader>
+								<CardContent className='grid grid-cols-1 md:grid-cols-2 sm:gap-3'>
+									<FormField
+										control={form.control}
+										name='address'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>Address</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='ex: 123 Street, NT district'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='city'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>City</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='ex: Abuja'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='state'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>State</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='ex: Federal Capital Territory'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='country'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>Country</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='ex: Nigeria'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='zipCode'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>
+													Zip Code
+												</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='ex: 123456'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name='website'
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel className='font-semibold'>
+													Your website
+												</FormLabel>
+												<FormControl>
+													<Input
+														type='text'
+														placeholder='https://www.yourwebsite.com'
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage className='text-xs' />
+											</FormItem>
+										)}
+									/>
+								</CardContent>
+							</Card>
+							<Button type='submit' className='w-full' disabled={loading}>
+								{btnTitle}
+							</Button>
 						</div>
 					</div>
 				</form>

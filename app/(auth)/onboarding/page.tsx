@@ -3,7 +3,7 @@ import AccountProfile from '../components/account-profile';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
-import { fetchUser } from '@/actions/fetch-user';
+import { fetchUser } from '@/actions/user';
 
 const Onboarding = async () => {
 	const user = await currentUser();
@@ -26,7 +26,7 @@ const Onboarding = async () => {
 		country: '',
 		website: '',
 		about: '',
-		on_boarded: false,
+		on_boarded: true,
 		userId: user.id,
 	};
 

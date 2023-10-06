@@ -10,7 +10,7 @@ import { homeJumbotron } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import FadeIn, { FadeInStagger } from '@/components/shared/fade-in';
 import { currentUser } from '@clerk/nextjs';
-import { fetchUser } from '@/actions/fetch-user';
+import { fetchUser } from '@/actions/user';
 import { redirect } from 'next/navigation';
 
 const cards = [

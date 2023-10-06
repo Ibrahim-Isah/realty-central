@@ -8,20 +8,8 @@ export async function POST(req: Request) {
 
 		const body = await req.json();
 
-		const {
-			firstName,
-			lastName,
-			email,
-			companyName,
-			profileImage,
-			address,
-			city,
-			state,
-			zipCode,
-			country,
-			website,
-			about,
-		} = body;
+		const { firstName, email } = body;
+
 		if (!userId) {
 			return new NextResponse('Unauthorized', {
 				status: 401,
@@ -34,24 +22,17 @@ export async function POST(req: Request) {
 			});
 		}
 
-		const user = prismadb.user.create({
+		const user = await prismadb.user.create({
 			data: {
-				firstName,
-				lastName,
-				email,
-				on_boarded: true,
-				companyName,
-				profileImage,
-				address,
-				city,
-				state,
-				zipCode,
-				country,
-				website,
-				userId,
-				about,
+				...body,
 			},
 		});
+
+		if (!user) {
+			return new NextResponse('Internal Error', {
+				status: 500,
+			});
+		}
 
 		return NextResponse.json(user);
 	} catch (error) {
