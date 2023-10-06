@@ -52,7 +52,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 	const onSubmit = async (values: z.infer<typeof userSchema>) => {
 		setLoading(true);
 		try {
-			await axios.post('/api/user', values);
+			const response = await axios.post('/api/user', values);
 			setLoading(false);
 			toast.success('Onboarding completed');
 			form.reset();
