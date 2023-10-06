@@ -12,7 +12,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.23.2",
     "@hookform/resolvers": "^3.2.0",
-    "@prisma/client": "^5.2.0",
+    "@prisma/client": "^5.4.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-collapsible": "^1.0.3",
@@ -54,6 +54,6 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "prisma": "^5.2.0"
+    "prisma": "^5.4.1"
   }
 }
