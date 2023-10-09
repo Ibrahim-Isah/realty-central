@@ -1,9 +1,10 @@
 import React from 'react';
-import AccountProfile from '../components/account-profile';
+import AccountProfile from '../../../components/form/account-profile';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import { fetchUser } from '@/actions/user';
+import OnboardingForm from '../components/onboarding-form';
 
 const Onboarding = async () => {
 	const user = await currentUser();
@@ -48,7 +49,7 @@ const Onboarding = async () => {
 				</div>
 			</div>
 			<div className=''>
-				<AccountProfile userData={userData} btnTitle='Continue' />
+				<OnboardingForm userData={userData} btnTitle='Continue' />
 			</div>
 		</div>
 	);
