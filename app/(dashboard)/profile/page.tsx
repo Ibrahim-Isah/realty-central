@@ -1,14 +1,24 @@
-'use client';
+import { fetchUser } from '@/actions/user';
 import BreadCrumb from '@/components/shared/breadcrumb';
-import { usePathname } from 'next/navigation';
-import React from 'react';
+import { UserData } from '@/types';
 import { LuUser } from 'react-icons/lu';
+import ProfileForm from './components/profile-form';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { userSchema } from '@/lib/validations/user';
 
-const Profile = () => {
-	const pathname = usePathname();
+const Profile = async () => {
+	const userInfo = await fetchUser();
+	if (!userInfo) {
+		return null;
+	}
 
-	// remove the first slash from the pathname
-	const breadcrumb = pathname.slice(1);
+	const userData = {
+		...userInfo,
+	};
+
+	const breadcrumb = 'profile';
 	return (
 		<main className=''>
 			<BreadCrumb
@@ -17,6 +27,9 @@ const Profile = () => {
 				subtitle='Edit your profile'
 				breadcrumb={breadcrumb}
 			/>
+			<div>
+				<ProfileForm userData={userData as UserData} />
+			</div>
 		</main>
 	);
 };

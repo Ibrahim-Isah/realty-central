@@ -19,50 +19,28 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { userSchema } from '@/lib/validations/user';
 import { UserData } from '@/types';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Separator } from '@radix-ui/react-separator';
-import React, { ChangeEvent, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
+import React, { ChangeEvent } from 'react';
 import * as z from 'zod';
-import axios from 'axios';
-import { toast } from 'react-hot-toast';
 
 interface AccountProfileProps {
 	userData: UserData;
 	btnTitle: string;
+	form: any;
+	onSubmit: (values: z.infer<typeof userSchema>) => void;
+	setFiles: React.Dispatch<React.SetStateAction<File[]>>;
+	loading: boolean;
+	setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AccountProfile: React.FC<AccountProfileProps> = ({
 	userData,
 	btnTitle,
+	form,
+	onSubmit,
+	setFiles,
+	loading,
 }) => {
-	const router = useRouter();
-
-	const [files, setFiles] = useState<File[]>([]);
-	const [loading, setLoading] = useState(false);
-
-	const defaultValues = userData;
-
-	const form = useForm<z.infer<typeof userSchema>>({
-		resolver: zodResolver(userSchema),
-		defaultValues,
-	});
-
-	const onSubmit = async (values: z.infer<typeof userSchema>) => {
-		setLoading(true);
-		try {
-			await axios.post('/api/user', values);
-			setLoading(false);
-			toast.success('Onboarding completed');
-			form.reset();
-			router.push('/dashboard');
-		} catch (err) {
-			setLoading(false);
-			toast.error('Something went wrong');
-		}
-	};
-
 	const handleImage = (
 		e: ChangeEvent<HTMLInputElement>,
 		fieldChange: (value: string) => void
