@@ -1,15 +1,15 @@
 import prismadb from '@/lib/prismadb';
-import { currentUser } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs';
 
 export const fetchUser = async () => {
+	const { userId } = auth();
 	try {
-		const loggedInUser = await currentUser();
-		if (!loggedInUser) {
+		if (!userId) {
 			return null;
 		}
 		const user = await prismadb.user.findUnique({
 			where: {
-				userId: loggedInUser.id || '',
+				userId: userId || '',
 			},
 		});
 

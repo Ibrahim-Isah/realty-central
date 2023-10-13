@@ -3,10 +3,6 @@ import BreadCrumb from '@/components/shared/breadcrumb';
 import { UserData } from '@/types';
 import { LuUser } from 'react-icons/lu';
 import ProfileForm from './components/profile-form';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { userSchema } from '@/lib/validations/user';
 
 const Profile = async () => {
 	const userInfo = await fetchUser();

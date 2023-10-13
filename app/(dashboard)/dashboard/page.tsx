@@ -1,66 +1,15 @@
-'use client';
+import { fetchUser } from '@/actions/user';
+import { currentUser } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
+import Dashboard from './components/dashboard';
+import { UserData } from '@/types';
 
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { formatter } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
-import {
-	LuBanknote,
-	LuClock,
-	LuHome,
-	LuLayoutDashboard,
-	LuUsers,
-} from 'react-icons/lu';
-import BreadCrumb from '../../../components/shared/breadcrumb';
-import Appointments from './components/appointments';
-import Chart from './components/chart';
+export default async function Page() {
+	const user = await currentUser();
+	if (!user) return redirect('/sign-up');
 
-const cards = [
-	{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },
-	{ icon: <LuUsers />, title: 'Customers', value: '200' },
-	{ icon: <LuHome />, title: 'Properties', value: '25' },
-	{ icon: <LuClock />, title: 'Appointments', value: '5' },
-];
+	const userInfo = await fetchUser();
+	if (!userInfo || !userInfo.on_boarded) redirect('/onboarding');
 
-export default function Dashboard() {
-	const pathname = usePathname();
-
-	// remove the first slash from the pathname
-	const breadcrumb = pathname.slice(1);
-
-	return (
-		<main className=''>
-			<BreadCrumb
-				icon={<LuLayoutDashboard />}
-				title='Welcome, Isah Abba Ibrahim'
-				subtitle='Overview of Your Dashboard'
-				breadcrumb={breadcrumb}
-			/>
-
-			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5'>
-				{cards.map((card) => (
-					<Card key={card.title}>
-						<CardHeader className='font-medium  '>
-							<div className='flex items-center text-lg '>
-								<div className='text-xl'>{card.icon}</div>
-								<h2 className='ml-3 font-inter'>{card.title}</h2>
-							</div>
-						</CardHeader>
-						<CardContent>
-							<div>
-								<h1 className='text-3xl font-semibold'>{card.value}</h1>
-							</div>
-						</CardContent>
-					</Card>
-				))}
-			</div>
-			<div className='grid grid-cols-1 lg:grid-cols-5 space-y-5 md:space-y-0 md:gap-5 mt-5 md:mt-10 mb-5'>
-				<div className='col-span-3 h-full'>
-					<Chart />
-				</div>
-				<div className='col-span-2 h-full'>
-					<Appointments />
-				</div>
-			</div>
-		</main>
-	);
+	return <Dashboard user={userInfo as UserData} />;
 }
