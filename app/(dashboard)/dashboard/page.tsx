@@ -1,12 +1,12 @@
 import { fetchUser } from '@/actions/user';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
-import Dashboard from './components/dashboard';
 import { UserData } from '@/types';
+import Dashboard from '@/components/dashboard/dashboard';
 
 export default async function Page() {
 	const user = await currentUser();
-	if (!user) return redirect('/sign-up');
+	if (!user) return redirect('/sign-in');
 
 	const userInfo = await fetchUser();
 	if (!userInfo || !userInfo.on_boarded) redirect('/onboarding');

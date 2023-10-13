@@ -1,24 +1,16 @@
-'use client';
-import BreadCrumb from '@/components/shared/breadcrumb';
-import { usePathname } from 'next/navigation';
-import React from 'react';
-import { LuUsers } from 'react-icons/lu';
+import { fetchUser } from '@/actions/user';
+import Customers from '@/components/customer/customers';
+import { currentUser } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
 
-const Customers = () => {
-	const pathname = usePathname();
+const Page = async () => {
+	const user = await currentUser();
+	if (!user) return redirect('/sign-in');
 
-	// remove the first slash from the pathname
-	const breadcrumb = pathname.slice(1);
-	return (
-		<main className=''>
-			<BreadCrumb
-				icon={<LuUsers />}
-				title='Customers'
-				subtitle='Registered Customers'
-				breadcrumb={breadcrumb}
-			/>
-		</main>
-	);
+	const userInfo = await fetchUser();
+	if (!userInfo || !userInfo.on_boarded) redirect('/onboarding');
+
+	return <Customers />;
 };
 
-export default Customers;
+export default Page;

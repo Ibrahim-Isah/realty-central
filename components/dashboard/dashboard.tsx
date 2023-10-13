@@ -1,9 +1,11 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import React from 'react';
+import BreadCrumb from '@/components/shared/breadcrumb';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { formatter } from '@/lib/utils';
+import { UserData } from '@/types';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 import {
 	LuBanknote,
 	LuClock,
@@ -11,11 +13,8 @@ import {
 	LuLayoutDashboard,
 	LuUsers,
 } from 'react-icons/lu';
-import BreadCrumb from '@/components/shared/breadcrumb';
 import Appointments from './appointments';
 import Chart from './chart';
-import { UserData } from '@/types';
-import { User } from '@prisma/client';
 
 const cards = [
 	{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },
