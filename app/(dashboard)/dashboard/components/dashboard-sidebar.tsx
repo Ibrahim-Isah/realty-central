@@ -1,8 +1,7 @@
-import React from 'react';
-
+import { Button } from '@/components/ui/button';
+import { SignOutButton } from '@clerk/nextjs';
 import Image from 'next/image';
 import DashboardContent from './dashboard-content';
-import { Button } from '@/components/ui/button';
 
 const DashboardSidebar = () => {
 	return (
@@ -19,12 +18,14 @@ const DashboardSidebar = () => {
 					</div>
 					<DashboardContent setSidebarOpen={() => null} />
 				</div>
-				<Button
-					variant='outline'
-					className='border border-primary-color mb-16 md:mb-10'
-				>
-					Log out
-				</Button>
+				<SignOutButton>
+					<Button
+						variant='outline'
+						className='border border-primary-color mb-16 md:mb-10'
+					>
+						Log out
+					</Button>
+				</SignOutButton>
 			</div>
 		</>
 	);

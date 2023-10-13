@@ -4,13 +4,12 @@ import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 
 import Jumbotron from '@/app/(root)/components/jumbotron';
+import FadeIn, { FadeInStagger } from '@/components/shared/fade-in';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { homeJumbotron } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import FadeIn, { FadeInStagger } from '@/components/shared/fade-in';
-import { currentUser } from '@clerk/nextjs';
-import { fetchUser } from '@/actions/user';
+import { useUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 
 const cards = [
@@ -111,6 +110,11 @@ const reviews = [
 ];
 
 export default function Home() {
+	const { isSignedIn } = useUser();
+
+	if (isSignedIn) {
+		return redirect('/dashboard');
+	}
 	return (
 		<main className=''>
 			{/* Hero Page Section */}
