@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 import { LuUserPlus, LuUsers } from 'react-icons/lu';
 import BreadCrumb from '../shared/breadcrumb';
@@ -10,9 +10,17 @@ import { Separator } from '../ui/separator';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Label } from '../ui/label';
 import { BsSortAlphaDown } from 'react-icons/bs';
+import { useModal } from '@/hooks/use-modal-store';
 
 const Customers = () => {
+	const { onOpen } = useModal();
 	const pathname = usePathname();
+	const router = useRouter();
+
+	const handleCreateCustomer = () => {
+		onOpen('createCustomer', {});
+		router.push('/customers?id=1');
+	};
 
 	// remove the first slash from the pathname
 	const breadcrumb = pathname.slice(1);
@@ -35,6 +43,7 @@ const Customers = () => {
 				<Button
 					variant='default'
 					className='bg-primary-color align-middle  mb-16 md:mb-10 hover:bg-blend-darken'
+					onClick={handleCreateCustomer}
 				>
 					<LuUserPlus />
 					<span className='mx-1'>Create Customer</span>
