@@ -18,8 +18,8 @@ const Customers = () => {
 	const router = useRouter();
 
 	const handleCreateCustomer = () => {
+		router.push('/customers');
 		onOpen('createCustomer', {});
-		router.push('/customers?id=1');
 	};
 
 	// remove the first slash from the pathname

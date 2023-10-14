@@ -65,7 +65,7 @@ const ContactForm = () => {
 							name='firstname'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='font-semibold'>First Name</FormLabel>
+									<FormLabel className=' font-inter'>First Name</FormLabel>
 									<FormControl>
 										<Input placeholder='Firstname' {...field} />
 									</FormControl>
@@ -78,7 +78,7 @@ const ContactForm = () => {
 							name='lastname'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='font-semibold'>Last Name</FormLabel>
+									<FormLabel className=' font-inter'>Last Name</FormLabel>
 									<FormControl>
 										<Input placeholder='Lastname' {...field} />
 									</FormControl>
@@ -91,7 +91,7 @@ const ContactForm = () => {
 							name='email'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='font-semibold'>Email</FormLabel>
+									<FormLabel className=' font-inter'>Email</FormLabel>
 									<FormControl>
 										<Input placeholder='Email' {...field} />
 									</FormControl>
@@ -104,7 +104,7 @@ const ContactForm = () => {
 							name='phone'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='font-semibold'>Phone No.</FormLabel>
+									<FormLabel className=' font-inter'>Phone No.</FormLabel>
 									<FormControl>
 										<Input placeholder='+234 800 000 000' {...field} />
 									</FormControl>
@@ -117,7 +117,7 @@ const ContactForm = () => {
 							name='message'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='font-semibold'>Message</FormLabel>
+									<FormLabel className=' font-inter'>Message</FormLabel>
 									<FormControl>
 										<Textarea placeholder='Message' {...field} />
 									</FormControl>
@@ -168,7 +168,7 @@ const Contact = () => {
 						/>
 					</div>
 					<div className='space-y-3 self-start'>
-						<h1 className='font-inter text-primary-color font-semibold text-lg'>
+						<h1 className='font-inter text-primary-color font-semibold  text-lg'>
 							Get in Touch
 						</h1>
 						<div className='space-y-2 text-[16px]'>
