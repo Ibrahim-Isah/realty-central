@@ -22,7 +22,7 @@ export const customerSchema = z.object({
 		.email({
 			message: 'Invalid Email Address',
 		}),
-	phoneNumber: z
+	phone: z
 		.string({
 			required_error: 'Phone Number is required',
 			invalid_type_error: 'Phone Number must be a string',

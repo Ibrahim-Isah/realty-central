@@ -24,6 +24,8 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
+import { toast } from 'react-hot-toast';
+import axios from 'axios';
 
 const CustomerModal = () => {
 	const params = useSearchParams();
@@ -35,7 +37,7 @@ const CustomerModal = () => {
 		firstName: data?.firstName,
 		lastName: data?.lastName,
 		email: data?.email,
-		phoneNumber: data?.phoneNumber,
+		phone: data?.phone,
 		address: data?.address,
 		city: data?.city,
 		state: data?.state,
@@ -51,8 +53,16 @@ const CustomerModal = () => {
 		onClose();
 	};
 
-	const onSubmit = (data: z.infer<typeof customerSchema>) => {
-		console.log(data);
+	const onSubmit = async (data: z.infer<typeof customerSchema>) => {
+		try {
+			const response = await axios.post('/api/customer', data);
+			console.log('this is the response', response);
+			toast.success('Customer created successfully');
+			handleClose();
+		} catch (error) {
+			console.log(error);
+			toast.error('Something went wrong');
+		}
 	};
 	return (
 		<Dialog open={isModalOpen} onOpenChange={handleClose}>
@@ -109,7 +119,7 @@ const CustomerModal = () => {
 							/>
 							<FormField
 								control={form.control}
-								name='phoneNumber'
+								name='phone'
 								render={({ field }) => (
 									<FormItem className='mb-2'>
 										<FormLabel className='font-inter'>Phone Number</FormLabel>
