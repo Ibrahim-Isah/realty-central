@@ -113,7 +113,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 						<div className='col-span-8'>
 							<Card className='pb-4 mb-5'>
 								<CardHeader>
-									<p className='text-base font-semibold '>
+									<p className='text-base font-semibold font-inter '>
 										Personal Information
 									</p>
 								</CardHeader>
@@ -123,7 +123,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='firstName'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>
+												<FormLabel className=' font-inter'>
 													First Name
 												</FormLabel>
 												<FormControl>
@@ -142,9 +142,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='lastName'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>
-													Last Name
-												</FormLabel>
+												<FormLabel className=' font-inter'>Last Name</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -161,7 +159,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='email'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>Email</FormLabel>
+												<FormLabel className=' font-inter'>Email</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -178,7 +176,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='companyName'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>
+												<FormLabel className=' font-inter'>
 													Company Name
 												</FormLabel>
 												<FormControl>
@@ -197,7 +195,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='phone'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>
+												<FormLabel className=' font-inter'>
 													Phone Number
 												</FormLabel>
 												<FormControl>
@@ -216,7 +214,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='about'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>Bio</FormLabel>
+												<FormLabel className=' font-inter'>Bio</FormLabel>
 												<FormControl>
 													<Textarea
 														rows={4}
@@ -232,7 +230,9 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 							</Card>
 							<Card className='pb-4 mb-5'>
 								<CardHeader>
-									<p className='text-base font-semibold '>Other Information</p>
+									<p className='text-base font-semibold font-inter '>
+										Other Information
+									</p>
 								</CardHeader>
 								<CardContent className='grid grid-cols-1 md:grid-cols-2 sm:gap-3'>
 									<FormField
@@ -240,7 +240,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='address'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>Address</FormLabel>
+												<FormLabel className=' font-inter'>Address</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -257,7 +257,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='city'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>City</FormLabel>
+												<FormLabel className=' font-inter'>City</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -274,7 +274,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='state'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>State</FormLabel>
+												<FormLabel className=' font-inter'>State</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -291,7 +291,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='country'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>Country</FormLabel>
+												<FormLabel className=' font-inter'>Country</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -308,9 +308,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='zipCode'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>
-													Zip Code
-												</FormLabel>
+												<FormLabel className=' font-inter'>Zip Code</FormLabel>
 												<FormControl>
 													<Input
 														type='text'
@@ -327,7 +325,7 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 										name='website'
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel className='font-semibold'>
+												<FormLabel className=' font-inter'>
 													Your website
 												</FormLabel>
 												<FormControl>
@@ -343,7 +341,11 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 									/>
 								</CardContent>
 							</Card>
-							<Button type='submit' className='w-full' disabled={loading}>
+							<Button
+								type='submit'
+								className='w-full bg-primary-color'
+								disabled={loading}
+							>
 								{btnTitle}
 							</Button>
 						</div>

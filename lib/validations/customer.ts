@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-export const userSchema = z.object({
+export const customerSchema = z.object({
 	id: z.string().optional(),
 	firstName: z
 		.string({
@@ -21,44 +21,38 @@ export const userSchema = z.object({
 		})
 		.email({
 			message: 'Invalid Email Address',
-		})
-		.nonempty(),
-	companyName: z
-		.string({
-			required_error: 'Company Name is required',
-			invalid_type_error: 'Company Name must be a string',
-		})
-		.min(2)
-		.nonempty(),
+		}),
 	phone: z
 		.string({
 			required_error: 'Phone Number is required',
 			invalid_type_error: 'Phone Number must be a string',
 		})
+		.min(10, {
+			message: 'Phone Number must be at least 10 characters',
+		})
 		.nonempty(),
-	profileImage: z.string().optional(),
-	address: z.string().nonempty(),
+	address: z
+		.string({
+			required_error: 'Address is required',
+			invalid_type_error: 'Address must be a string',
+		})
+		.nonempty(),
 	city: z
 		.string({
 			required_error: 'City is required',
 			invalid_type_error: 'City must be a string',
 		})
 		.nonempty(),
-	state: z.string().nonempty(),
-	zipCode: z.string().optional(),
+	state: z
+		.string({
+			required_error: 'State is required',
+			invalid_type_error: 'State must be a string',
+		})
+		.nonempty(),
 	country: z
 		.string({
 			required_error: 'Country is required',
 			invalid_type_error: 'Country must be a string',
 		})
 		.nonempty(),
-	website: z
-		.string()
-		.url({
-			message: 'Invalid Website Address',
-		})
-		.optional(),
-	about: z.string().nonempty(),
-	userId: z.string().optional(),
-	on_boarded: z.boolean().optional(),
 });
