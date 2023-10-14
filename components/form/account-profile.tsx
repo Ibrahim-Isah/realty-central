@@ -341,7 +341,11 @@ const AccountProfile: React.FC<AccountProfileProps> = ({
 									/>
 								</CardContent>
 							</Card>
-							<Button type='submit' className='w-full' disabled={loading}>
+							<Button
+								type='submit'
+								className='w-full bg-primary-color'
+								disabled={loading}
+							>
 								{btnTitle}
 							</Button>
 						</div>
