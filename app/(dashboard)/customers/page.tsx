@@ -1,3 +1,4 @@
+import { fetchAllCustomers } from '@/actions/customer';
 import { fetchUser } from '@/actions/user';
 import Customers from '@/components/customer/customers';
 import { currentUser } from '@clerk/nextjs';
@@ -9,8 +10,9 @@ const Page = async () => {
 
 	const userInfo = await fetchUser();
 	if (!userInfo || !userInfo.on_boarded) redirect('/onboarding');
+	const customers = await fetchAllCustomers(userInfo?.id);
 
-	return <Customers />;
+	return <Customers customers={customers} />;
 };
 
 export default Page;

@@ -1,18 +1,21 @@
 'use client';
 
+import { useModal } from '@/hooks/use-modal-store';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
+import { BsSortAlphaDown } from 'react-icons/bs';
 import { LuUserPlus, LuUsers } from 'react-icons/lu';
 import BreadCrumb from '../shared/breadcrumb';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
-import { Separator } from '../ui/separator';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { Label } from '../ui/label';
-import { BsSortAlphaDown } from 'react-icons/bs';
-import { useModal } from '@/hooks/use-modal-store';
+import { Separator } from '../ui/separator';
 
-const Customers = () => {
+type CustomersProps = {
+	customers: any;
+};
+
+const Customers: React.FC<CustomersProps> = ({ customers }) => {
 	const { onOpen } = useModal();
 	const pathname = usePathname();
 	const router = useRouter();

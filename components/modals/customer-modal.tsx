@@ -26,6 +26,7 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
+import { revalidatePath } from 'next/cache';
 
 const CustomerModal = () => {
 	const params = useSearchParams();
@@ -55,9 +56,9 @@ const CustomerModal = () => {
 
 	const onSubmit = async (data: z.infer<typeof customerSchema>) => {
 		try {
-			const response = await axios.post('/api/customer', data);
-			console.log('this is the response', response);
+			await axios.post('/api/customer', data);
 			toast.success('Customer created successfully');
+			revalidatePath('/customers');
 			handleClose();
 		} catch (error) {
 			console.log(error);
@@ -185,7 +186,11 @@ const CustomerModal = () => {
 						/>
 						<div>
 							<DialogFooter className='bg-gray-100 px-6 py-4'>
-								<Button type='submit' onClick={form.handleSubmit(onSubmit)}>
+								<Button
+									type='submit'
+									className='bg-primary-color'
+									onClick={form.handleSubmit(onSubmit)}
+								>
 									Submit
 								</Button>
 							</DialogFooter>
