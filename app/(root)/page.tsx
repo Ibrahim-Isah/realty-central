@@ -115,6 +115,7 @@ export default function Home() {
 	if (isSignedIn) {
 		return redirect('/dashboard');
 	}
+
 	return (
 		<main className=''>
 			{/* Hero Page Section */}
