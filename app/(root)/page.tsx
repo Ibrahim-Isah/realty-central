@@ -116,7 +116,6 @@ export default function Home() {
 		return redirect('/dashboard');
 	}
 
-	console.log('random');
 	return (
 		<main className=''>
 			{/* Hero Page Section */}
