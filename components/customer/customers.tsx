@@ -10,6 +10,9 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Separator } from '../ui/separator';
+import { DataTable } from '@/app/(dashboard)/customers/data-table';
+import { columns } from '@/app/(dashboard)/customers/columns';
+import { format } from 'date-fns';
 
 type CustomersProps = {
 	customers: any;
@@ -24,6 +27,17 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 		router.push('/customers');
 		onOpen('createCustomer', {});
 	};
+
+	const formattedCustomers = customers.map((customer: any) => {
+		return {
+			id: customer.id,
+			name: customer.firstName + ' ' + customer.lastName,
+			email: customer.email,
+			phone: customer.phone,
+			address: customer.city + ' ' + customer.state,
+			date: format(customer.createdAt, 'MMMM dd, yyyy'),
+		};
+	});
 
 	// remove the first slash from the pathname
 	const breadcrumb = pathname.slice(1);
@@ -45,7 +59,7 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 				</div>
 				<Button
 					variant='default'
-					className='bg-primary-color align-middle  mb-16 md:mb-10 hover:bg-blend-darken'
+					className='bg-primary-color align-middle hover:bg-blend-darken'
 					onClick={handleCreateCustomer}
 				>
 					<LuUserPlus />
@@ -53,7 +67,7 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 				</Button>
 			</div>
 			<Separator className='my-2' />
-			<div className='flex items-center justify-between'>
+			{/* <div className='flex items-center justify-between'>
 				<Input
 					placeholder='Search Customers'
 					className='max-w-md border border-primary-color'
@@ -89,6 +103,9 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 						</div>
 					</PopoverContent>
 				</Popover>
+			</div> */}
+			<div>
+				<DataTable columns={columns} data={formattedCustomers} />
 			</div>
 			<Separator className='my-2' />
 		</main>
