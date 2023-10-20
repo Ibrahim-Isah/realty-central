@@ -10,9 +10,9 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Separator } from '../ui/separator';
-import { DataTable } from '@/app/(dashboard)/customers/data-table';
-import { columns } from '@/app/(dashboard)/customers/columns';
 import { format } from 'date-fns';
+import { DataTable } from '../ui/data-table';
+import { columns } from './columns';
 
 type CustomersProps = {
 	customers: any;
