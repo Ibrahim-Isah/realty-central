@@ -36,6 +36,7 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 			phone: customer.phone,
 			address: customer.city + ' ' + customer.state,
 			date: format(customer.createdAt, 'MMMM dd, yyyy'),
+			...customer,
 		};
 	});
 

@@ -20,55 +20,55 @@ const data = [
 	{
 		name: 'Jan',
 		expenses: 4000,
-		profit: 2400,
+		income: 2400,
 		amt: 2400,
 	},
 	{
 		name: 'Feb',
 		expenses: 3000,
-		profit: 1398,
+		income: 1398,
 		amt: 2210,
 	},
 	{
 		name: 'Mar',
 		expenses: 2000,
-		profit: 9800,
+		income: 9800,
 		amt: 2290,
 	},
 	{
 		name: 'April',
 		expenses: 2780,
-		profit: 3908,
+		income: 3908,
 		amt: 2000,
 	},
 	{
 		name: 'May',
 		expenses: 1890,
-		profit: 4800,
+		income: 4800,
 		amt: 2181,
 	},
 	{
 		name: 'June',
 		expenses: 2390,
-		profit: 3800,
+		income: 3800,
 		amt: 2500,
 	},
 	{
 		name: 'July',
 		expenses: 3490,
-		profit: 4300,
+		income: 4300,
 		amt: 2100,
 	},
 ];
 
 const Chart = () => {
 	// calculate total profit
-	let sumProfit = (data: any) => {
-		let totalProfit = 0;
+	let sumIncome = (data: any) => {
+		let totalIncome = 0;
 		for (let i = 0; i < data.length; i++) {
-			totalProfit += data[i].profit;
+			totalIncome += data[i].income;
 		}
-		return totalProfit;
+		return totalIncome;
 	};
 
 	let sumExpenses = (data: any) => {
@@ -97,11 +97,11 @@ const Chart = () => {
 							<AiOutlineRise />
 						</div>
 						<div>
-							<h1 className='text-2xl font-semibold'>
-								{formatter.format(sumProfit(data))}
+							<h1 className='text-xl font-medium'>
+								{formatter.format(sumIncome(data))}
 							</h1>
 							<h1 className='font-poppins text-[#737373] text-sm font-light'>
-								Total Profit
+								Total Income
 							</h1>
 						</div>
 					</div>
@@ -110,7 +110,7 @@ const Chart = () => {
 							<AiOutlineFall />
 						</div>
 						<div>
-							<h1 className='text-2xl font-semibold'>
+							<h1 className='text-xl font-medium'>
 								{formatter.format(sumExpenses(data))}
 							</h1>
 							<h1 className='font-poppins text-[#737373] text-sm font-light'>
@@ -138,7 +138,7 @@ const Chart = () => {
 						<YAxis />
 						<Tooltip />
 						<Legend />
-						<Bar dataKey='profit' fill='#22C55E' />
+						<Bar dataKey='income' fill='#22C55E' />
 						<Bar dataKey='expenses' fill='#EF4040' />
 					</BarChart>
 				</ResponsiveContainer>

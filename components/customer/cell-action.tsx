@@ -17,6 +17,7 @@ interface CellActionProps {
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
+	console.log('this is the customer data', data.original);
 	return (
 		<>
 			<DropdownMenu>
