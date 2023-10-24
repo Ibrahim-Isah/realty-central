@@ -16,20 +16,25 @@ import {
 import Appointments from './appointments';
 import Chart from './chart';
 
-const cards = [
-	{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },
-	{ icon: <LuUsers />, title: 'Customers', value: '200' },
-	{ icon: <LuHome />, title: 'Properties', value: '25' },
-	{ icon: <LuClock />, title: 'Appointments', value: '5' },
-];
-
 type DashboardProps = {
 	user: UserData;
+	cardsCount: any;
 };
-const Dashboard: React.FC<DashboardProps> = ({ user }) => {
+const Dashboard: React.FC<DashboardProps> = ({ user, cardsCount }) => {
 	const pathname = usePathname();
 
 	const breadcrumb = pathname.slice(1);
+
+	const cards = [
+		{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },
+		{
+			icon: <LuUsers />,
+			title: 'Customers',
+			value: cardsCount.customersCount || 0,
+		},
+		{ icon: <LuHome />, title: 'Properties', value: '25' },
+		{ icon: <LuClock />, title: 'Appointments', value: '5' },
+	];
 	return (
 		<main className=''>
 			<BreadCrumb
