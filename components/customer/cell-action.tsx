@@ -11,13 +11,14 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
+import { useModal } from '@/hooks/use-modal-store';
 
 interface CellActionProps {
 	data: any;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
-	console.log('this is the customer data', data.original);
+	const { onOpen } = useModal();
 	return (
 		<>
 			<DropdownMenu>
@@ -29,7 +30,10 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 				</DropdownMenuTrigger>
 				<DropdownMenuContent align='end'>
 					<DropdownMenuLabel>Actions</DropdownMenuLabel>
-					<DropdownMenuItem className='cursor-pointer'>
+					<DropdownMenuItem
+						className='cursor-pointer'
+						onClick={() => onOpen('editCustomer', data.original)}
+					>
 						<LuEdit className='mr-2 h-4 w-4' /> Edit Customer
 					</DropdownMenuItem>
 					<DropdownMenuItem className='cursor-pointer'>

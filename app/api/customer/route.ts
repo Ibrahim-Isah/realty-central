@@ -31,6 +31,7 @@ export async function POST(req: Request) {
 				status: 500,
 			});
 		}
+
 		return NextResponse.json(customer);
 	} catch (error) {
 		console.log('[CUSTOMER_POST]', error);

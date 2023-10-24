@@ -1,19 +1,21 @@
 import { create } from 'zustand';
 
-export type ModalType = 'createCustomer' | null;
+export type ModalType = 'createCustomer' | 'editCustomer' | null;
 
 interface ModalProps {
 	type: ModalType;
-	data: any;
+	payload: any;
 	isOpen: boolean;
 	onOpen: (type: ModalType, data: any) => void;
 	onClose: () => void;
+	resetPayload: () => void;
 }
 
 export const useModal = create<ModalProps>((set) => ({
 	type: null,
-	data: {},
+	payload: {},
 	isOpen: false,
-	onOpen: (type, data = {}) => set({ isOpen: true, type, data }),
+	onOpen: (type, payload = {}) => set({ isOpen: true, type, payload }),
 	onClose: () => set({ type: null, isOpen: false }),
+	resetPayload: () => set({ payload: {} }),
 }));
