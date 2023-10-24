@@ -42,15 +42,15 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
 			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5'>
 				{cards.map((card) => (
 					<Card key={card.title}>
-						<CardHeader className='font-medium  '>
-							<div className='flex items-center text-lg '>
-								<div className='text-xl'>{card.icon}</div>
-								<h2 className='ml-3 font-inter'>{card.title}</h2>
+						<CardHeader className='font-regular  '>
+							<div className='flex items-center  justify-between flex-row-reverse text-base text-primary-color'>
+								<div className='text-xl '>{card.icon}</div>
+								<h2 className=' font-inter'>{card.title}</h2>
 							</div>
 						</CardHeader>
 						<CardContent>
 							<div>
-								<h1 className='text-3xl font-semibold'>{card.value}</h1>
+								<h1 className='text-xl font-semibold'>{card.value}</h1>
 							</div>
 						</CardContent>
 					</Card>

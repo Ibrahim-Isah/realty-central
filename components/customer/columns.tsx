@@ -31,7 +31,7 @@ export const columns: ColumnDef<Customer>[] = [
 		header: 'Phone',
 	},
 	{
-		accessorKey: 'address',
+		accessorKey: 'tableAddress',
 		header: 'Address',
 	},
 	{

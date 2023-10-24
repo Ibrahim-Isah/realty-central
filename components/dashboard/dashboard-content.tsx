@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { BsDot } from 'react-icons/bs';
 import {
 	LuBarChart,
+	LuBoxes,
 	LuChevronDown,
 	LuChevronUp,
 	LuClock,
@@ -74,6 +75,12 @@ const DashboardContent = ({
 			children: [],
 		},
 		{
+			href: 'expenses',
+			text: 'Expenses',
+			icon: <LuBoxes />,
+			children: [],
+		},
+		{
 			href: 'analytics',
 			text: 'Analytics',
 			icon: <LuBarChart />,
@@ -93,7 +100,7 @@ const DashboardContent = ({
 					{route.href ? (
 						<Link href={`/${route.href}`} onClick={() => setSidebarOpen(false)}>
 							<div
-								className={`flex items-center text-lg  p-2 rounded-md  ${
+								className={`flex items-center text-base  p-2 rounded-md  ${
 									currentPath === route.href
 										? 'text-white bg-primary-color'
 										: 'text-[#333333] hover:bg-[#00336622]'
@@ -106,7 +113,7 @@ const DashboardContent = ({
 					) : (
 						<Collapsible open={isOpen} onOpenChange={setIsOpen}>
 							<CollapsibleTrigger
-								className={`flex items-center justify-between text-lg w-full p-2 rounded-md  ${
+								className={`flex items-center justify-between text-base w-full p-2 rounded-md  ${
 									currentPath === 'sold'
 										? 'bg-[#00336622]'
 										: currentPath === 'rents' && 'bg-[#00336622]'

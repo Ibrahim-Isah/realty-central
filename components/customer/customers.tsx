@@ -1,17 +1,14 @@
 'use client';
 
 import { useModal } from '@/hooks/use-modal-store';
+import { format } from 'date-fns';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
-import { BsSortAlphaDown } from 'react-icons/bs';
 import { LuUserPlus, LuUsers } from 'react-icons/lu';
 import BreadCrumb from '../shared/breadcrumb';
 import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { Separator } from '../ui/separator';
-import { format } from 'date-fns';
 import { DataTable } from '../ui/data-table';
+import { Separator } from '../ui/separator';
 import { columns } from './columns';
 
 type CustomersProps = {
@@ -34,8 +31,9 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 			name: customer.firstName + ' ' + customer.lastName,
 			email: customer.email,
 			phone: customer.phone,
-			address: customer.city + ' ' + customer.state,
+			tableAddress: customer.city + ' ' + customer.state,
 			date: format(customer.createdAt, 'MMMM dd, yyyy'),
+			...customer,
 		};
 	});
 
