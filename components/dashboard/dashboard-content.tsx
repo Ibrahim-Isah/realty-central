@@ -57,6 +57,11 @@ const DashboardContent = ({
 			icon: <LuHome />,
 			children: [
 				{
+					href: 'available',
+					text: 'Available Properties',
+					children: [],
+				},
+				{
 					href: 'rents',
 					text: 'Rent Properties',
 					children: [],
