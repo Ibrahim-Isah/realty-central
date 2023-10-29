@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { formatter } from '@/lib/utils';
 import Link from 'next/link';
 import { AiOutlineFall, AiOutlineRise } from 'react-icons/ai';
-import { LuChevronRight } from 'react-icons/lu';
+import { ChevronRight } from 'lucide-react';
 import {
 	Bar,
 	BarChart,
@@ -87,7 +87,7 @@ const Chart = () => {
 					<Link href='/'>
 						<div className='flex items-center text-secondary-color hover:text-dark-primary'>
 							<p className='mr-1'>All Analytics</p>
-							<LuChevronRight />
+							<ChevronRight />
 						</div>
 					</Link>
 				</div>

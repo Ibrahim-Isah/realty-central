@@ -3,7 +3,7 @@
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { LuHome } from 'react-icons/lu';
+import { Home } from 'lucide-react';
 
 const Sold = () => {
 	const pathname = usePathname();
@@ -13,7 +13,7 @@ const Sold = () => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuHome />}
+				icon={<Home />}
 				title='Sold Properties'
 				subtitle='All listing of sold properties'
 				breadcrumb={`Lease management/${breadcrumb}`}

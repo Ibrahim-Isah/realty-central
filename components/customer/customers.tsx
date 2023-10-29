@@ -4,7 +4,7 @@ import { useModal } from '@/hooks/use-modal-store';
 import { format } from 'date-fns';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
-import { LuUserPlus, LuUsers } from 'react-icons/lu';
+import { UserPlus, Users } from 'lucide-react';
 import BreadCrumb from '../shared/breadcrumb';
 import { Button } from '../ui/button';
 import { DataTable } from '../ui/data-table';
@@ -42,7 +42,7 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuUsers />}
+				icon={<Users />}
 				title='Customers'
 				subtitle='Registered Customers'
 				breadcrumb={breadcrumb}
@@ -60,7 +60,7 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 					className='bg-primary-color align-middle hover:bg-blend-darken'
 					onClick={handleCreateCustomer}
 				>
-					<LuUserPlus />
+					<UserPlus />
 					<span className='mx-1'>Create Customer</span>
 				</Button>
 			</div>

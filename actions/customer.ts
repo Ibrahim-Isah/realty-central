@@ -1,11 +1,12 @@
 import prismadb from '@/lib/prismadb';
+import { Customer } from '@prisma/client';
 
 export const fetchAllCustomers = async (userId: string) => {
 	try {
 		if (!userId) {
 			return null;
 		}
-		const customers = await prismadb.customer.findMany({
+		const customers: Customer[] = await prismadb.customer.findMany({
 			where: {
 				userId: userId || '',
 			},

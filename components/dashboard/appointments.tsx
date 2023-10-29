@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
 import React from 'react';
-import { LuChevronRight } from 'react-icons/lu';
+import { ChevronRight } from 'lucide-react';
 
 const appointment = {
 	date: new Date().toISOString(),
@@ -22,7 +22,7 @@ const Appointments = () => {
 					<Link href='/'>
 						<div className='flex items-center text-secondary-color hover:text-dark-primary'>
 							<p className='mr-1'>View Appointments</p>
-							<LuChevronRight />
+							<ChevronRight />
 						</div>
 					</Link>
 				</div>
@@ -46,7 +46,7 @@ const Appointments = () => {
 									</div>
 									<Link href='/appointments'>
 										<TooltipIcon
-											icon={<LuChevronRight />}
+											icon={<ChevronRight />}
 											tooltip='View Details'
 										/>
 									</Link>

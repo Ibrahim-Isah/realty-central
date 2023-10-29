@@ -1,10 +1,11 @@
 'use client';
+
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { BarChart } from 'lucide-react';
+import { Boxes } from 'lucide-react';
 
-const Analytics = () => {
+const Expenses = () => {
 	const pathname = usePathname();
 
 	// remove the first slash from the pathname
@@ -12,13 +13,13 @@ const Analytics = () => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<BarChart />}
-				title='Analytics'
-				subtitle='All computed statistical data'
+				icon={<Boxes size={20} />}
+				title='Expenses'
+				subtitle='Create and track all expenses'
 				breadcrumb={breadcrumb}
 			/>
 		</main>
 	);
 };
 
-export default Analytics;
+export default Expenses;

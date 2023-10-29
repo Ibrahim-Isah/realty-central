@@ -1,6 +1,6 @@
 'use client';
 
-import { LuEdit, LuMail, LuMoreHorizontal, LuTrash } from 'react-icons/lu';
+import { Edit, Mail, MoreHorizontal, Trash } from 'lucide-react';
 
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { Button } from '../ui/button';
@@ -25,7 +25,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 				<DropdownMenuTrigger asChild>
 					<Button variant='ghost' className='h-8 w-8 p-0'>
 						<span className='sr-only'>Open menu</span>
-						<LuMoreHorizontal className='h-4 w-4' />
+						<MoreHorizontal className='h-4 w-4' />
 					</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent align='end'>
@@ -34,16 +34,16 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 						className='cursor-pointer'
 						onClick={() => onOpen('editCustomer', data.original)}
 					>
-						<LuEdit className='mr-2 h-4 w-4' /> Edit Customer
+						<Edit className='mr-2 h-4 w-4' /> Edit Customer
 					</DropdownMenuItem>
 					<DropdownMenuItem className='cursor-pointer'>
-						<LuMail className='mr-2 h-4 w-4' /> Send Email
+						<Mail className='mr-2 h-4 w-4' /> Send Email
 					</DropdownMenuItem>
 					<DropdownMenuItem className='cursor-pointer'>
 						<AiOutlineSchedule className='mr-2 h-4 w-4' /> Schedule Appointment
 					</DropdownMenuItem>
 					<DropdownMenuItem className='text-red-600 hover:text-red-600 cursor-pointer'>
-						<LuTrash className='mr-2 h-4 w-4 text-red-600' /> Delete
+						<Trash className='mr-2 h-4 w-4 text-red-600' /> Delete
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>

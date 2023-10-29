@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { LuMapPin, LuMail, LuPhone } from 'react-icons/lu';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 
 import { Separator } from '@/components/ui/separator';
@@ -90,16 +90,16 @@ const Footer = () => {
 						<h1 className='font-inter font-semibold text-lg'>Get in Touch</h1>
 						<div className='space-y-2 text-[16px]'>
 							<IconText
-								icon={<LuMapPin size='1.2rem' />}
+								icon={<MapPin size='1.2rem' />}
 								text='Abuja, Federal Capital Territory, Nigeria'
 							/>
 							<IconText
-								icon={<LuMail size='1.2rem' />}
+								icon={<Mail size='1.2rem' />}
 								text='isahibn08@gmail.com'
 								link='isahibn08@gmail.com'
 							/>
 							<IconText
-								icon={<LuPhone size='1.2rem' />}
+								icon={<Phone size='1.2rem' />}
 								text='+234 814 2711 631'
 							/>
 						</div>

@@ -2,7 +2,7 @@
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { LuClock } from 'react-icons/lu';
+import { Clock } from 'lucide-react';
 
 const Appointments = () => {
 	const pathname = usePathname();
@@ -12,7 +12,7 @@ const Appointments = () => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuClock />}
+				icon={<Clock />}
 				title='Appointments'
 				subtitle='All schedule appointments and details'
 				breadcrumb={breadcrumb}
