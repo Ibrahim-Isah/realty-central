@@ -1,7 +1,10 @@
+'use client';
+
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { LuBoxes } from 'react-icons/lu';
+// import { LuBoxes } from 'react-icons/lu';
+import { Boxes } from 'lucide-react';
 
 const Expenses = () => {
 	const pathname = usePathname();
@@ -11,7 +14,7 @@ const Expenses = () => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuBoxes />}
+				icon={<Boxes size={20} />}
 				title='Expenses'
 				subtitle='Create and track all expenses'
 				breadcrumb={breadcrumb}
