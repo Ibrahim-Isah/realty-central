@@ -1,5 +1,4 @@
 import React from 'react';
-import { LuUser } from 'react-icons/lu';
 
 interface BreadCrumbProps {
 	icon?: any;

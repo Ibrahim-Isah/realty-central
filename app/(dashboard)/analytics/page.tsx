@@ -2,7 +2,7 @@
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { LuBarChart } from 'react-icons/lu';
+import { BarChart } from 'lucide-react';
 
 const Analytics = () => {
 	const pathname = usePathname();
@@ -12,7 +12,7 @@ const Analytics = () => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuBarChart />}
+				icon={<BarChart />}
 				title='Analytics'
 				subtitle='All computed statistical data'
 				breadcrumb={breadcrumb}

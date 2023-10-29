@@ -9,7 +9,7 @@ import {
 	SheetTrigger,
 } from '@/components/ui/sheet';
 import Image from 'next/image';
-import { LuMenu, LuSearch } from 'react-icons/lu';
+import { Menu, Search } from 'lucide-react';
 import DashboardContent from './dashboard-content';
 import { useState } from 'react';
 
@@ -28,7 +28,7 @@ const DashboardTopbar = () => {
 							variant='outline'
 							className='flex lg:hidden hover:bg-[#00336611] p-[9px] rounded-full border-none'
 						>
-							<LuMenu size='1.5rem' />
+							<Menu size='1.5rem' />
 						</Button>
 					</SheetTrigger>
 					<SheetContent
@@ -71,7 +71,7 @@ const DashboardTopbar = () => {
 							className='bg-white h-10 px-5 pr-10 shadow-md rounded-full text-sm focus:outline-none w-full'
 						/>
 						<button type='submit' className='absolute right-0 top-0 mt-3 mr-4 '>
-							<LuSearch />
+							<Search />
 						</button>
 					</div>
 				</div>

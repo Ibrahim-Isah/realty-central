@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LuMenu } from 'react-icons/lu';
+import { Menu } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -98,7 +98,7 @@ const Header = () => {
 							variant='outline'
 							className='flex lg:hidden hover:bg-[#00336611] p-[9px] rounded-full border-none'
 						>
-							<LuMenu size='1.5rem' />
+							<Menu size='1.5rem' />
 						</Button>
 					</SheetTrigger>
 					<SheetContent className='flex flex-col'>

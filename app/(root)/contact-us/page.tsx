@@ -16,7 +16,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
-import { LuMail, LuMapPin, LuPhone } from 'react-icons/lu';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import * as z from 'zod';
 
 const formSchema = z.object({
@@ -173,16 +173,16 @@ const Contact = () => {
 						</h1>
 						<div className='space-y-2 text-[16px]'>
 							<IconText
-								icon={<LuMapPin size='1.2rem' />}
+								icon={<MapPin size='1.2rem' />}
 								text='Abuja, Federal Capital Territory, Nigeria'
 							/>
 							<IconText
-								icon={<LuMail size='1.2rem' />}
+								icon={<Mail size='1.2rem' />}
 								text='isahibn08@gmail.com'
 								link='isahibn08@gmail.com'
 							/>
 							<IconText
-								icon={<LuPhone size='1.2rem' />}
+								icon={<Phone size='1.2rem' />}
 								text='+234 814 2711 631'
 							/>
 						</div>

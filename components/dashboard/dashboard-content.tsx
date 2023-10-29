@@ -5,17 +5,17 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { BsDot } from 'react-icons/bs';
 import {
-	LuBarChart,
-	LuBoxes,
-	LuChevronDown,
-	LuChevronUp,
-	LuClock,
-	LuFiles,
-	LuHome,
-	LuLayoutDashboard,
-	LuUser,
-	LuUsers,
-} from 'react-icons/lu';
+	BarChart,
+	Boxes,
+	ChevronDown,
+	ChevronUp,
+	Clock,
+	Files,
+	Home,
+	LayoutDashboard,
+	User,
+	Users,
+} from 'lucide-react';
 
 import {
 	Collapsible,
@@ -37,24 +37,24 @@ const DashboardContent = ({
 		{
 			href: 'dashboard',
 			text: 'Dashboard',
-			icon: <LuLayoutDashboard />,
+			icon: <LayoutDashboard />,
 			children: [],
 		},
 		{
 			href: 'documents',
 			text: 'Documents',
-			icon: <LuFiles />,
+			icon: <Files />,
 			children: [],
 		},
 		{
 			href: 'customers',
 			text: 'Customers',
-			icon: <LuUsers />,
+			icon: <Users />,
 			children: [],
 		},
 		{
 			text: 'Lease Management',
-			icon: <LuHome />,
+			icon: <Home />,
 			children: [
 				{
 					href: 'available',
@@ -76,25 +76,25 @@ const DashboardContent = ({
 		{
 			href: 'appointments',
 			text: 'Appointments',
-			icon: <LuClock />,
+			icon: <Clock />,
 			children: [],
 		},
 		{
 			href: 'expenses',
 			text: 'Expenses',
-			icon: <LuBoxes />,
+			icon: <Boxes />,
 			children: [],
 		},
 		{
 			href: 'analytics',
 			text: 'Analytics',
-			icon: <LuBarChart />,
+			icon: <BarChart />,
 			children: [],
 		},
 		{
 			href: 'profile',
 			text: 'Profile',
-			icon: <LuUser />,
+			icon: <User />,
 			children: [],
 		},
 	];
@@ -128,7 +128,7 @@ const DashboardContent = ({
 									{route.icon}
 									<p className='pl-3 font-semibold '>{route.text}</p>
 								</div>
-								{isOpen ? <LuChevronUp /> : <LuChevronDown />}
+								{isOpen ? <ChevronUp /> : <ChevronDown />}
 							</CollapsibleTrigger>
 							<CollapsibleContent>
 								{route.children.map((innerRoute) => (

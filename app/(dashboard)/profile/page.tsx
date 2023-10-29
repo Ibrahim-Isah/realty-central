@@ -1,7 +1,7 @@
 import { fetchUser } from '@/actions/user';
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { UserData } from '@/types';
-import { LuUser } from 'react-icons/lu';
+import { User } from 'lucide-react';
 import ProfileForm from './components/profile-form';
 
 const Profile = async () => {
@@ -18,7 +18,7 @@ const Profile = async () => {
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuUser />}
+				icon={<User />}
 				title='Profile'
 				subtitle='Edit your profile'
 				breadcrumb={breadcrumb}

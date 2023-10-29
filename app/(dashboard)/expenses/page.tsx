@@ -3,7 +3,6 @@
 import BreadCrumb from '@/components/shared/breadcrumb';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-// import { LuBoxes } from 'react-icons/lu';
 import { Boxes } from 'lucide-react';
 
 const Expenses = () => {

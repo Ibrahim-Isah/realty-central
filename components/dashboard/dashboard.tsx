@@ -6,13 +6,7 @@ import { formatter } from '@/lib/utils';
 import { UserData } from '@/types';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import {
-	LuBanknote,
-	LuClock,
-	LuHome,
-	LuLayoutDashboard,
-	LuUsers,
-} from 'react-icons/lu';
+import { Banknote, Clock, Home, LayoutDashboard, Users } from 'lucide-react';
 import Appointments from './appointments';
 import Chart from './chart';
 
@@ -26,19 +20,19 @@ const Dashboard: React.FC<DashboardProps> = ({ user, cardsCount }) => {
 	const breadcrumb = pathname.slice(1);
 
 	const cards = [
-		{ icon: <LuBanknote />, title: 'Revenue', value: formatter.format(100000) },
+		{ icon: <Banknote />, title: 'Revenue', value: formatter.format(100000) },
 		{
-			icon: <LuUsers />,
+			icon: <Users />,
 			title: 'Customers',
 			value: cardsCount.customersCount || 0,
 		},
-		{ icon: <LuHome />, title: 'Properties', value: '25' },
-		{ icon: <LuClock />, title: 'Appointments', value: '5' },
+		{ icon: <Home />, title: 'Properties', value: '25' },
+		{ icon: <Clock />, title: 'Appointments', value: '5' },
 	];
 	return (
 		<main className=''>
 			<BreadCrumb
-				icon={<LuLayoutDashboard />}
+				icon={<LayoutDashboard />}
 				title={`Welcome, ${user?.firstName + ' ' + user?.lastName}`}
 				subtitle='Overview of Your Dashboard'
 				breadcrumb={breadcrumb}
