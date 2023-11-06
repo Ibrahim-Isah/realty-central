@@ -2,6 +2,8 @@
 
 import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
+import { Button } from '../ui/button';
+import { ArrowUpDownIcon } from 'lucide-react';
 
 export interface Customer {
 	id: string;
@@ -36,7 +38,17 @@ export const columns: ColumnDef<Customer>[] = [
 	},
 	{
 		accessorKey: 'date',
-		header: 'Date',
+		header: ({ column }) => {
+			return (
+				<Button
+					variant='ghost'
+					onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+				>
+					Date
+					<ArrowUpDownIcon size={'1rem'} className='mx-1' />
+				</Button>
+			);
+		},
 	},
 	{
 		accessorKey: 'actions',

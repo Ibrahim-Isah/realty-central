@@ -65,45 +65,13 @@ const Customers: React.FC<CustomersProps> = ({ customers }) => {
 				</Button>
 			</div>
 			<Separator className='my-2' />
-			{/* <div className='flex items-center justify-between'>
-				<Input
-					placeholder='Search Customers'
-					className='max-w-md border border-primary-color'
-				/>
-				<Popover>
-					<PopoverTrigger asChild>
-						<Button
-							variant='outline'
-							size={'sm'}
-							className='border border-primary-color min-w-[5rem]'
-						>
-							<span className='mx-1'>Sort</span>
-							<BsSortAlphaDown />
-						</Button>
-					</PopoverTrigger>
-					<PopoverContent className='w-80'>
-						<div className='grid gap-4'>
-							<div className='space-y-2'>
-								<h4 className='font-medium leading-none'>Sort</h4>
-								<p className='text-sm text-muted-foreground'>Sort customers</p>
-							</div>
-							<div className='grid gap-2'>
-								<p className='hover:bg-slate-100 w-full py-1 my-0 px-1 rounded cursor-pointer'>
-									Name
-								</p>
-								<p className='hover:bg-slate-100 w-full py-1 my-0 px-1 rounded cursor-pointer'>
-									Date Ascending
-								</p>
-								<p className='hover:bg-slate-100 w-full py-1 my-0 px-1 rounded cursor-pointer'>
-									Date Descending
-								</p>
-							</div>
-						</div>
-					</PopoverContent>
-				</Popover>
-			</div> */}
+
 			<div>
-				<DataTable columns={columns} data={formattedCustomers} />
+				<DataTable
+					columns={columns}
+					data={formattedCustomers}
+					searchKey='name'
+				/>
 			</div>
 			<Separator className='my-2' />
 		</main>
