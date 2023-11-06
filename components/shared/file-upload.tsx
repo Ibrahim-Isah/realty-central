@@ -1,5 +1,6 @@
-import { UploadCloudIcon, UploadIcon } from 'lucide-react';
-import React, { useCallback, useMemo } from 'react';
+import { UploadCloudIcon } from 'lucide-react';
+import Image from 'next/image';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 const baseStyle = {
@@ -31,6 +32,8 @@ const rejectStyle = {
 };
 
 const FileUpload = () => {
+	const [files, setFiles] = useState<string[] | []>([]);
+
 	const onDrop = useCallback((acceptedFiles: any) => {
 		// Do something with the files
 		acceptedFiles.forEach((file: File) => {
@@ -43,10 +46,13 @@ const FileUpload = () => {
 			reader.onload = () => {
 				// Do whatever you want with the file contents
 				const binaryStr = reader.result;
+				const url = URL.createObjectURL(file);
+				setFiles((prev) => [...prev, url]);
 				console.log(binaryStr);
 			};
 			reader.readAsArrayBuffer(file);
 		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } =
@@ -70,6 +76,11 @@ const FileUpload = () => {
 				<UploadCloudIcon size={50} />
 				<p>Drag &apos;n&apos; drop some files here, or click to select files</p>
 			</div>
+			{files.map((file, index) => (
+				<div key={index}>
+					<Image src={file} alt='Uploaded file' width={200} height={200} />
+				</div>
+			))}
 		</div>
 	);
 };
