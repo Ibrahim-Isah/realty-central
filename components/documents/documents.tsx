@@ -1,18 +1,18 @@
 'use client';
 
 import { FilePlus, FilesIcon } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 import BreadCrumb from '../shared/breadcrumb';
 import { Button } from '../ui/button';
 import { Separator } from '../ui/separator';
-import FileUpload from '../shared/file-upload';
 
 interface DocumentsProps {
 	documents: any;
 }
 
 const Documents: React.FC<DocumentsProps> = ({ documents }) => {
+	const router = useRouter();
 	const pathname = usePathname();
 
 	// remove the first slash from the pathname
@@ -37,17 +37,15 @@ const Documents: React.FC<DocumentsProps> = ({ documents }) => {
 					<Button
 						variant='default'
 						className='bg-primary-color align-middle hover:bg-blend-darken'
-						onClick={() => {}}
+						onClick={() => {
+							router.push('/documents/add');
+						}}
 					>
 						<FilePlus />
 						<span className='mx-1'>Upload Document(s)</span>
 					</Button>
 				</div>
 				<Separator className='my-2' />
-
-				<div>
-					<FileUpload />
-				</div>
 			</main>
 		</>
 	);
