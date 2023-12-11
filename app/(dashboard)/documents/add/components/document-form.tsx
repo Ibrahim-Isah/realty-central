@@ -152,11 +152,25 @@ const DocumentForm: React.FC<DocumentProps> = ({ user, customers }) => {
 										</FormItem>
 									)}
 								/>
+								<FormField
+									control={form.control}
+									name='url'
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel className=' font-inter'>
+												Document URL
+											</FormLabel>
+											<FormControl>
+												<FileUpload />
+											</FormControl>
+											<FormMessage className='text-xs' />
+										</FormItem>
+									)}
+								/>
 							</form>
 						</Form>
 					</CardContent>
 				</Card>
-				{/* <FileUpload /> */}
 			</div>
 		</div>
 	);
