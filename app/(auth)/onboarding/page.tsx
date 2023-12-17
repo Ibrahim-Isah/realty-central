@@ -1,9 +1,6 @@
-import React from 'react';
-import AccountProfile from '../../../components/form/account-profile';
-import { UserButton } from '@clerk/nextjs';
-import { currentUser } from '@clerk/nextjs';
-import { redirect } from 'next/navigation';
 import { fetchUser } from '@/actions/user';
+import { UserButton, currentUser } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
 import OnboardingForm from '../components/onboarding-form';
 
 const Onboarding = async () => {
